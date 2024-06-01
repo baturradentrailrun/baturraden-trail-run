@@ -71,6 +71,7 @@ export function CarouselImage() {
       <div className="absolute bottom-16 right-10 flex gap-3">
         {Array.from({ length: count }).map((_, index) => (
           <div
+            key={index}
             className={cn(
               index === current - 1 ? "bg-teal-500" : "bg-slate-100 opacity-30",
               "w-5 h-[2px]"
