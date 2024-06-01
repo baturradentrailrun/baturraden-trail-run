@@ -1,5 +1,6 @@
 import About from "@/components/sections/About";
 import Hero from "@/components/sections/Hero";
+import KategoriEvent from "@/components/sections/KategoriEvent";
 import Support from "@/components/sections/Support";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Support />
       <About />
+      <KategoriEvent />
     </main>
   );
 }
