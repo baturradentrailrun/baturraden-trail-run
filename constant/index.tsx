@@ -39,3 +39,14 @@ export const imageSupport = [
     alt: "support-1",
   },
 ];
+
+export const CAROUSEL_IMAGE = [
+  {
+    image: "/carouselImage.png",
+    alt: "carousel image",
+  },
+  {
+    image: "/carousel2.jpeg",
+    alt: "carousel image",
+  },
+];
