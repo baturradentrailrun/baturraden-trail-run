@@ -3,11 +3,12 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 import React from "react";
+import HeroBackround from "../HeroBackround";
 
 const Hero = () => {
   return (
     <header className="relative overflow-hidden bg-blue-700 h-screen">
-      <Image
+      {/* <Image
         src={"/heroimage.png"}
         width={1442}
         height={731.23}
@@ -15,7 +16,8 @@ const Hero = () => {
         objectFit="contain"
         objectPosition="center"
         className="absolute z-[1] top-0 left-0 w-full h-full"
-      />
+      /> */}
+      <HeroBackround />
       <div className="flex justify-center items-center h-full gap-4 relative z-[2] mt-12">
         <div
           className={cn(

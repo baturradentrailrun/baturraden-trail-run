@@ -38,7 +38,7 @@ const Navbar = () => {
             : ""
         } `}
       >
-        <div className="max-container  flex w-full justify-between items-center">
+        <div className="max-container flex w-full justify-between items-center ">
           <Logo />
           <ul className="hidden gap-5 lg:flex items-center ">
             <ModeToggle />
@@ -53,9 +53,9 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <div className="  flex items-center gap-5">
+          <div className="flex items-center gap-5 lg:hidden">
             <div
-              className={`z-20 rounded-full  text-blue-700 lg:hidden ${
+              className={`z-20 rounded-full  text-blue-700  ${
                 isOpen
                   ? "text-white transition-all duration-200 ease-in-out"
                   : "text-white transition-all delay-300"
