@@ -43,12 +43,12 @@ export function CarouselImage() {
       plugins={[plugin.current]}
       className="w-full h-full relative"
     >
-      <CarouselContent className="w-full rounded-xl">
+      <CarouselContent className="w-full rounded-2xl">
         {CAROUSEL_IMAGE.map((c, index) => {
           return (
             <CarouselItem
               key={index}
-              className="w-[300px] h-[300px] rounded-2xl overflow-hidden relative"
+              className="w-[300px] h-[300px] rounded-2xl overflow-hidden  relative"
             >
               <div className="relative w-full h-full rounded-2xl">
                 <Image
