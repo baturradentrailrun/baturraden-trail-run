@@ -37,8 +37,8 @@ const CardInfoEvent = () => {
       {roadmap.length === 0 ? (
         <RoadmapSkeleton />
       ) : (
-        <Card className="rounded-xl p-5">
-          <div className="flex gap-5">
+        <Card className="rounded-t-3xl dark:border-none rounded-b-none lg:rounded-xl p-5 bg-slate-100 ">
+          <div className="flex flex-col lg:flex-row gap-5 justify-center items-center">
             {sortedRoadmap.map((item: CardInfoItemProps, index: number) => (
               <div key={index}>
                 <CardInfoItem data={item} index={index} />

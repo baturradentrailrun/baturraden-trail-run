@@ -5,10 +5,11 @@ import { buttonVariants } from "../ui/button";
 import { cn } from "@/lib/utils";
 import CardInfoEvent from "../CardInfoEvent";
 import getRoadmap from "@/sanity/fetch";
+import { BsWhatsapp } from "react-icons/bs";
 
 const Roadmap = () => {
   return (
-    <div className="relative bg-gradient-to-r from-[#004FC7] to-[#013E9C] flex justify-between h-[463px]">
+    <div className="relative bg-gradient-to-r from-[#004FC7] to-[#013E9C] flex flex-col lg:flex-row justify-between min-h-[463px]">
       <Image
         src={"/2024.png"}
         width={596}
@@ -21,8 +22,15 @@ const Roadmap = () => {
         <p className="w-9/12 mb-10">
           Nantikan keseruan bareng kita dan jangan lupa catat tanggal asik kita.
         </p>
-        <Link href={"#"} className={cn(buttonVariants(), "capitalize")}>
+        <Link
+          href={"#"}
+          className={cn(
+            buttonVariants({ variant: "whatsapp" }),
+            "capitalize flex gap-2 items-center w-fit"
+          )}
+        >
           Info lanjut hubungi
+          <BsWhatsapp />
         </Link>
       </div>
       <div className="relative">
@@ -30,10 +38,10 @@ const Roadmap = () => {
           src={"/roadmaplegend.svg"}
           width={783}
           height={329}
-          alt="roadmap-map  "
-          className=""
+          alt="roadmap-map"
+          className="absolute right-0 -top-10 lg:static z-0"
         />
-        <div className=" absolute  bottom-10">
+        <div className="lg:absolute relative pt-32 lg:bottom-10 z-10">
           <CardInfoEvent />
         </div>
       </div>

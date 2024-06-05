@@ -30,23 +30,28 @@ const CardInfoItem = ({
   return (
     <div
       className={cn(
-        index === 1 && "border-x px-3 border-dashed border-slate-500 dash10",
-        "flex flex-col gap-5 w-fit"
+        index === 1 &&
+          "border-y lg:border-x lg:border-y-0 py-3 lg:py-0 px-3 border-dashed border-slate-500 ",
+        "flex flex-col  gap-5 lg:w-fit"
       )}
     >
-      <p className={"text-xs font-bold text-slate-900"}>
+      <p
+        className={"text-xs font-bold text-slate-900 text-center lg:text-start"}
+      >
         {formatDateToIndonesian(start, true)} s/d{" "}
         {formatDateToIndonesian(end, false)}
       </p>
       <h3
         className={cn(
           bgColor,
-          "font-bold p-2 rounded-lg text-center  text-white capitalize w-[200px]"
+          "font-bold p-2 rounded-full lg:rounded-lg text-center  text-white capitalize lg:w-[200px] "
         )}
       >
         {status}
       </h3>
-      <p className="capitalize text-xs w-[200px]">{description}</p>
+      <p className="capitalize text-xs lg:w-[200px] text-slate-900">
+        {description}
+      </p>
     </div>
   );
 };

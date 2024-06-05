@@ -4,6 +4,7 @@ import KategoriEvent from "@/components/sections/KategoriEvent";
 import Support from "@/components/sections/Support";
 import getAllData from "../sanity/fetch";
 import Roadmap from "@/components/sections/Roadmap";
+import Rute from "@/components/sections/Rute";
 
 export default async function Home() {
   return (
@@ -12,6 +13,7 @@ export default async function Home() {
       <Support />
       <About />
       <Roadmap />
+      <Rute />
       <KategoriEvent />
     </main>
   );
