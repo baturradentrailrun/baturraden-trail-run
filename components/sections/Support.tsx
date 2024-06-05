@@ -1,27 +1,38 @@
-import { imageSupport } from "@/constant";
-import Image from "next/image";
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import CarouselLogo from "../CarouselLogo";
+import { getSponsorship } from "@/sanity/fetch";
+import { CarouselImageProps } from "@/types";
 
 const Support = () => {
+  const [sponsorship, setSponsorship] = useState<CarouselImageProps[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getSponsorship();
+        setSponsorship(data);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching sponsorship:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className="bg-slate-950 text-white  padding-container py-10">
+    <div className="bg-slate-950 text-white padding-container py-10">
       <div className="max-container padding-container flex justify-center items-center flex-col">
-        <p className="capitalize mb-4">wujudkan generasi sehat bersama</p>
-        {/* <div className="flex flex-col lg:flex-row justify-around gap-5">
-          {imageSupport.map((item, index) => (
-            <Image
-              key={index}
-              src={item.image}
-              alt={item.alt}
-              height={20}
-              width={250}
-              objectFit="contain"
-              className="object-contain h-16"
-            />
-          ))}
-        </div> */}
-      <CarouselLogo />
+        <p className="capitalize mb-10">wujudkan generasi sehat bersama</p>
+        <CarouselLogo data={sponsorship} />
       </div>
     </div>
   );

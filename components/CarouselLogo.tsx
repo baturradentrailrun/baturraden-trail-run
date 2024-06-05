@@ -1,21 +1,22 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Carousel,
   CarouselApi,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "./ui/carousel";
-import { Card, CardContent } from "./ui/card";
-import { imageSupport } from "@/constant";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import Autoplay from "embla-carousel-autoplay";
 
-function CarouselLogo() {
+import Image from "next/image";
+
+import Autoplay from "embla-carousel-autoplay";
+import { CarouselImageProps } from "@/types";
+
+interface CarouselLogoProps {
+  data: CarouselImageProps[];
+}
+const CarouselLogo: React.FC<CarouselLogoProps> = ({ data }) => {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
@@ -23,7 +24,7 @@ function CarouselLogo() {
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!api) {
       return;
     }
@@ -47,39 +48,26 @@ function CarouselLogo() {
         className="w-full  mx-auto"
       >
         <CarouselContent className="">
-          {imageSupport.map((item, index) => (
+          {data.map((item, index) => (
             <CarouselItem
               key={index}
-              className=" basis-1/2 md:basis-1/3 lg:basis-1/4"
+              className=" basis-1/2 md:basis-1/3 lg:basis-1/4 items-center"
             >
               <Image
                 key={index}
-                src={item.image}
-                alt={item.alt}
+                src={item.imageUrl}
+                alt={item.title}
                 height={20}
-                width={250}
+                width={200}
                 objectFit="contain"
-                className="object-contain h-40 lg:h-24"
+                className="object-contain h-10 lg:h-16"
               />
             </CarouselItem>
           ))}
         </CarouselContent>
       </Carousel>
-      {/* <div className="flex justify-center ">
-        {Array.from({ length: count }).map((_, index) => (
-          <div
-            key={index}
-            className={cn(
-              index === current - 1
-                ? "bg-slate-500"
-                : "bg-slate-100 opacity-30",
-              "w-2 h-2 rounded-full mx-1 cursor-pointer"
-            )}
-          ></div>
-        ))}
-      </div> */}
     </>
   );
-}
+};
 
 export default CarouselLogo;

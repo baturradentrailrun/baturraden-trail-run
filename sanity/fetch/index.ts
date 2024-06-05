@@ -1,18 +1,29 @@
 import { groq } from "next-sanity";
 import { client } from "../lib/client";
 
-async function getAllData() {
+async function getRoadmap() {
   const query = groq`
-  *[_type == 'event']{
-    title,
-    date,
-    location,
+  *[_type == 'roadmap']{
     description,
-    image
+      status,
+      duration
   }
 `;
   const data = await client.fetch(query);
   return data;
 }
 
-export default getAllData;
+async function getSponsorship() {
+  const query = groq`
+  *[_type == 'sponsorship']{
+    _id,
+      title,
+      "imageUrl":
+        image.asset->url
+  }
+  `;
+  const data = await client.fetch(query);
+  return data;
+}
+
+export { getSponsorship, getRoadmap };
