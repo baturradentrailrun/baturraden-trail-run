@@ -1,4 +1,5 @@
 import About from "@/components/sections/About";
+import Footer from "@/components/sections/Footer";
 import Hero from "@/components/sections/Hero";
 import KategoriEvent from "@/components/sections/KategoriEvent";
 import Support from "@/components/sections/Support";
@@ -15,6 +16,7 @@ export default async function Home() {
       <Roadmap />
       <Rute />
       <KategoriEvent />
+      <Footer />
     </main>
   );
 }
