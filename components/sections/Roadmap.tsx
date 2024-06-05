@@ -1,11 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import { buttonVariants } from "../ui/button";
-import { cn } from "@/lib/utils";
 import CardInfoEvent from "../CardInfoEvent";
-import getRoadmap from "@/sanity/fetch";
 import { BsWhatsapp } from "react-icons/bs";
+import CustomButton from "../CustomButton";
 
 const Roadmap = () => {
   return (
@@ -22,16 +19,10 @@ const Roadmap = () => {
         <p className="w-9/12 mb-10">
           Nantikan keseruan bareng kita dan jangan lupa catat tanggal asik kita.
         </p>
-        <Link
-          href={"#"}
-          className={cn(
-            buttonVariants({ variant: "whatsapp" }),
-            "capitalize flex gap-2 items-center w-fit"
-          )}
-        >
+        <CustomButton href="#" variants={"whatsapp"} roundedFull>
           Info lanjut hubungi
           <BsWhatsapp />
-        </Link>
+        </CustomButton>
       </div>
       <div className="relative">
         <Image

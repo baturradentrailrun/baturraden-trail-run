@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "./ui/card";
 import { CardInfoItemProps } from "@/types";
-import getRoadmap from "@/sanity/fetch";
+import { getRoadmap } from "@/sanity/fetch";
 import RoadmapSkeleton from "./skeleton/RoadmapSkeleton";
 import CardInfoItem from "./CardInfoItem";
 
@@ -38,7 +38,7 @@ const CardInfoEvent = () => {
         <RoadmapSkeleton />
       ) : (
         <Card className="rounded-t-3xl dark:border-none rounded-b-none lg:rounded-xl p-5 bg-slate-100 ">
-          <div className="flex flex-col lg:flex-row gap-5 justify-center items-center">
+          <div className="flex flex-col lg:flex-row gap-5 justify-center lg:items-start items-center">
             {sortedRoadmap.map((item: CardInfoItemProps, index: number) => (
               <div key={index}>
                 <CardInfoItem data={item} index={index} />

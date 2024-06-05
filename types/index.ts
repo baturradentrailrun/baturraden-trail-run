@@ -6,3 +6,9 @@ export type CardInfoItemProps = {
     end: string;
   };
 };
+
+export type CarouselImageProps = {
+  _id: string;
+  title: string;
+  imageUrl: string;
+};

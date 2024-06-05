@@ -19,7 +19,7 @@ const CardInfoItem = ({
   ): string => {
     const date = new Date(dateString);
     const options: Intl.DateTimeFormatOptions = {
-      year: isStart ? undefined : "numeric", // Exclude year for start date
+      year: isStart ? undefined : "numeric",
       month: "long",
       day: "numeric",
     };

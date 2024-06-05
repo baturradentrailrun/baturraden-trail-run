@@ -13,4 +13,17 @@ async function getRoadmap() {
   return data;
 }
 
-export default getRoadmap;
+async function getSponsorship() {
+  const query = groq`
+  *[_type == 'sponsorship']{
+    _id,
+      title,
+      "imageUrl":
+        image.asset->url
+  }
+  `;
+  const data = await client.fetch(query);
+  return data;
+}
+
+export { getSponsorship, getRoadmap };
