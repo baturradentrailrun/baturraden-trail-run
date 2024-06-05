@@ -1,0 +1,54 @@
+"use client";
+import React, { useEffect, useState } from "react";
+import { Card } from "./ui/card";
+import { CardInfoItemProps } from "@/types";
+import getRoadmap from "@/sanity/fetch";
+import RoadmapSkeleton from "./skeleton/RoadmapSkeleton";
+import CardInfoItem from "./CardInfoItem";
+
+const CardInfoEvent = () => {
+  const [roadmap, setRoadmap] = useState<CardInfoItemProps[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getRoadmap();
+        setRoadmap(data);
+      } catch (error) {
+        console.error("Error fetching roadmap:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const statusOrder: { [key: string]: number } = {
+    registration: 0,
+    opening: 1,
+    "baturraden trail run": 2,
+  };
+
+  const sortedRoadmap = roadmap.sort((a, b) => {
+    return statusOrder[a.status] - statusOrder[b.status];
+  });
+
+  return (
+    <>
+      {roadmap.length === 0 ? (
+        <RoadmapSkeleton />
+      ) : (
+        <Card className="rounded-xl p-5">
+          <div className="flex gap-5">
+            {sortedRoadmap.map((item: CardInfoItemProps, index: number) => (
+              <div key={index}>
+                <CardInfoItem data={item} index={index} />
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+    </>
+  );
+};
+
+export default CardInfoEvent;

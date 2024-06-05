@@ -4,9 +4,9 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div className="flex justify-between overflow-hidden flex-col md:flex-row">
-      <div className="py-10 padding-container w-full">
-        <h2 className="text-3xl font-bold my-10">Ayo Mlayu!</h2>
+    <div className="flex justify-between overflow-hidden flex-col md:flex-row relative h-[500px] ">
+      <div className="py-10 padding-container w-full ">
+        <h2 className="text-3xl font-bold my-5">Ayo Mlayu!</h2>
         <p className="md:w-10/12 mb-10">
           Rasakan sensasi petualangan Lari maraton dengan Baturaden Festival
           Lintasan terbaik di Banyumas runner! Temukan tantangan Anda berikutnya
@@ -21,13 +21,34 @@ const About = () => {
           Daftar sekarang
         </Button>
       </div>
-      <div className="md:w-10/12 bg-[#003E9C] relative h-[496px] md:h-auto flex flex-col justify-between p-4">
+      <div className="md:w-10/12 bg-[#003E9C] relative h-[496px] md:h-auto flex flex-col justify-between p-4 pb-20">
+        <Image
+          src={"/bunderan.svg"}
+          width={639}
+          height={496}
+          alt="about image"
+          className="absolute right-[-100px] md:top-0"
+        />
+        <Image
+          src={"/bunderan2.svg"}
+          width={639}
+          height={496}
+          alt="about image"
+          className="absolute bottom-0 left-[-100px]"
+        />
         <Image
           src={"/aboutimage.png"}
           width={675}
           height={496}
           alt="about image"
           className="absolute -left-24 md:top-1/4"
+        />
+        <Image
+          src={"/aboutvector.svg"}
+          width={527}
+          height={496}
+          alt="about image"
+          className="absolute bottom-0 right-0"
         />
         <div className="flex-1"></div>
         <Button
