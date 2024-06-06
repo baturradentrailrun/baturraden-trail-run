@@ -9,6 +9,7 @@ type CustomButtonProps = {
   children: React.ReactNode;
   roundedFull?: boolean;
   size?: ButtonProps["size"];
+  className?: string;
 };
 const CustomButton = ({
   href,
@@ -16,12 +17,13 @@ const CustomButton = ({
   children,
   roundedFull,
   size,
+  className,
 }: CustomButtonProps) => {
   return (
     <Link
       href={href}
       className={cn(
-        buttonVariants({ variant: variants, size: size }),
+        buttonVariants({ variant: variants, size: size, className: className }),
         roundedFull && "rounded-full"
       )}
     >
