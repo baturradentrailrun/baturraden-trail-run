@@ -96,3 +96,11 @@
     @apply absolute left-[-99px] top-0 h-[100%] w-[100px] fill-blue-700 stroke-none;
   }
 }
+
+.bgFooter {
+  background-image: url("/footerbg.png");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

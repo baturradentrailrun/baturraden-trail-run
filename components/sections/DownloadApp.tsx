@@ -8,7 +8,7 @@ import Image from "next/image";
 function DownloadApp() {
   return (
     <>
-      <section className="padding-container py-8 md:flex">
+      <section className="padding-container py-32 md:flex">
         <div className="space-y-8 text-sm flex-1 flex flex-col justify-between">
           <p>
             Aplikasi YoAyo diciptakan tidak hanya untuk para pelari profesional,
