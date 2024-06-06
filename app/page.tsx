@@ -9,7 +9,7 @@ import Paket from "@/components/sections/Paket";
 
 export default async function Home() {
   return (
-    <main className="max-container">
+    <main>
       <Hero />
       <Support />
       <About />
