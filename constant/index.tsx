@@ -9,7 +9,7 @@ export const NAVBAR = [
   },
   {
     label: "kategori event",
-    path: "/#informasi-event",
+    path: "/#kategori-event",
   },
   {
     label: "download app",

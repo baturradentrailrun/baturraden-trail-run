@@ -13,13 +13,13 @@ export default async function Home() {
     <main>
       <Hero id="#" />
       <Support />
-      <About id="#informasi-event" />
+      <About id="informasi-event" />
       <Roadmap />
       <Rute />
       <KategoriEvent />
-      <Paket id="#kategori-event" />
-      <DownloadApp id="#download-app" />
-      <Footer id="#kontak" />
+      <Paket id="kategori-event" />
+      <DownloadApp id="download-app" />
+      <Footer id="kontak" />
     </main>
   );
 }
