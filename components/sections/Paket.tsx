@@ -7,10 +7,11 @@ import { CardPaketProps } from "@/types";
 
 const Paket = async () => {
   const paket = await getPaket();
-  console.log(paket);
+
+  paket.sort((a: CardPaketProps, b: CardPaketProps) => a.harga - b.harga);
 
   return (
-    <div className="bg-[#F2F2F2] padding-container flex lg:flex-row flex-col-reverse justify-between w-full py-10 gap-10 lg:gap-0">
+    <div className="bg-[#F2F2F2] padding-container flex  lg:flex-row flex-col-reverse justify-between w-full py-10 gap-10 lg:gap-0">
       <div className="w-full flex flex-col lg:flex-row justify-start gap-5 items-center border-t-2 lg:border-t-0 lg:border-r-2 border-dashed border-r-slate-500 pt-10 lg:pt-0">
         {paket.map((p: CardPaketProps, index: number) => (
           <div key={index}>
@@ -18,6 +19,7 @@ const Paket = async () => {
               name={p.name}
               description={p.description}
               harga={p.harga}
+              index={index}
             />
           </div>
         ))}

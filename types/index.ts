@@ -17,4 +17,5 @@ export type CardPaketProps = {
   name: string;
   description: string;
   harga: number;
+  index?: number;
 };
