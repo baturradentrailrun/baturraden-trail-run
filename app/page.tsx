@@ -19,7 +19,7 @@ export default async function Home() {
       <KategoriEvent />
       <Paket id="#kategori-event" />
       <DownloadApp id="#download-app" />
-      <Footer />
+      <Footer id="#kontak" />
     </main>
   );
 }
