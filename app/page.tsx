@@ -6,6 +6,7 @@ import Support from "@/components/sections/Support";
 import Roadmap from "@/components/sections/Roadmap";
 import Rute from "@/components/sections/Rute";
 import Paket from "@/components/sections/Paket";
+import DownloadApp from "@/components/sections/DownloadApp";
 
 export default async function Home() {
   return (
@@ -17,6 +18,7 @@ export default async function Home() {
       <Rute />
       <KategoriEvent />
       <Paket />
+      <DownloadApp />
       <Footer />
     </main>
   );
