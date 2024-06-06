@@ -1,14 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { overlay } from "@/constant/anim";
-const Overlay = () => {
+
+interface OverlayProps {
+  closeMenu: () => void;
+}
+
+const Overlay: React.FC<OverlayProps> = ({ closeMenu }) => {
   return (
     <motion.div
       variants={overlay}
       animate="enter"
       exit="exit"
       initial="initial"
-      className="z-0 fixed  bg-slate-800  backdrop-blur-md bg-opacity-10 w-full top-0 min-h-screen"
+      className="fixed inset-0 bg-slate-800 min-h-screen backdrop-blur-md bg-opacity-10 "
+      onClick={closeMenu}
     ></motion.div>
   );
 };
