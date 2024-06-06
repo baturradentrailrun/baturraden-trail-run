@@ -8,7 +8,7 @@ const Overlay = () => {
       animate="enter"
       exit="exit"
       initial="initial"
-      className="z-0 fixed  bg-slate-800  backdrop-blur-md bg-opacity-10 w-full top-0 h-full"
+      className="z-0 fixed  bg-slate-800  backdrop-blur-md bg-opacity-10 w-full top-0 min-h-screen"
     ></motion.div>
   );
 };

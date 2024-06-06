@@ -1,23 +1,27 @@
 export const NAVBAR = [
   {
-    label: "beranda",
+    label: "Beranda",
     path: "/",
   },
   {
-    label: "informasi event",
-    path: "/informasi-event",
+    label: "Informasi event",
+    path: "/#informasi-event",
   },
   {
     label: "kategori event",
-    path: "/informasi-event",
+    path: "/#informasi-event",
   },
   {
-    label: "galeri",
-    path: "/galeri",
+    label: "download app",
+    path: "/#download-app",
   },
+  // {
+  //   label: "galeri",
+  //   path: "/#galeri",
+  // },
   {
     label: "kontak",
-    path: "/informasi-event",
+    path: "/#kontak",
   },
 ];
 
