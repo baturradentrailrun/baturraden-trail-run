@@ -6,33 +6,39 @@ export const contact = defineType({
   type: "document",
   fields: [
     {
-      name: "name",
-      title: "Nama",
-      description: "Email, Instagram, Facebook dll",
-      type: "string",
-      placeholder: "Masukan Jenis Kontak",
+      name: "iconAndName",
+      title: "Icon dan Nama",
+      description: "Pilih icon dan masukan nama",
+      type: "object",
+      fields: [
+        {
+          title: "Icon",
+          name: "icon",
+          type: "iconPicker",
+        },
+        {
+          name: "socialmedia",
+          type: "string",
+          title: "Nama",
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+      options: {
+        columns: 2,
+      },
     },
     {
-      name: "kontak",
-      title: "kontak",
-      description:
-        "Masukan kontak / pastekan  secara lengkap jika kontak berbentuk link",
-      type: "string",
-      placeholder: "Masukan kontak",
+      name: "link",
+      title: "Link",
+      type: "url",
+      description: "Masukan link",
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
     select: {
-      title: "name",
-      contact: "kontak",
-    },
-    prepare(selection: any) {
-      const { title, contact } = selection;
-
-      return {
-        title: title,
-        subtitle: contact,
-      };
+      title: "iconAndName.socialmedia",
+      media: "iconAndName.icon",
     },
   },
 });
