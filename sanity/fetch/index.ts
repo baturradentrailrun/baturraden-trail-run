@@ -25,5 +25,16 @@ async function getSponsorship() {
   const data = await client.fetch(query);
   return data;
 }
+async function getSocialMedia() {
+  const query = groq`
+  *[_type == "contact"]{
+    "name": iconAndName.socialmedia,
+    "icon": iconAndName.icon.name,
+    "url": link
+  }
+  `;
+  const data = await client.fetch(query);
+  return data;
+}
 
-export { getSponsorship, getRoadmap };
+export { getSponsorship, getRoadmap, getSocialMedia };
