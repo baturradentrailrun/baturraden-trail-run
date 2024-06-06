@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Rute = () => {
   return (
-    <div className="bg-slate-900 relative flex lg:justify-between flex-col lg:flex-row">
+    <div className="bg-slate-900 relative flex lg:justify-center flex-col lg:flex-row max-container">
       <div className="relative">
         <h1
           className={cn(buttonVariants(), "rounded-full absolute top-5 left-5")}
