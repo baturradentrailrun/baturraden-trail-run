@@ -5,18 +5,9 @@ import Image from "next/image";
 import React from "react";
 import HeroBackround from "../HeroBackround";
 
-const Hero = () => {
+const Hero = ({ id }: { id: string }) => {
   return (
-    <header className="relative overflow-hidden bg-blue-700 h-screen">
-      {/* <Image
-        src={"/heroimage.png"}
-        width={1442}
-        height={731.23}
-        alt="hero image"
-        objectFit="contain"
-        objectPosition="center"
-        className="absolute z-[1] top-0 left-0 w-full h-full"
-      /> */}
+    <header id={id} className="relative overflow-hidden bg-blue-700 h-screen">
       <HeroBackround />
       <div className="flex justify-center items-center h-full gap-4 relative z-[2] mt-12">
         <div

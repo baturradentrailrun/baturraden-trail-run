@@ -21,11 +21,11 @@ const iconComponents = {
   youtube: FaYoutube,
 };
 
-async function Footer() {
+async function Footer({ id }: { id: string }) {
   const data = await getSocialMedia();
 
   return (
-    <div className="bgFooter">
+    <div id={id} className="bgFooter">
       <section className="bg-blue-700 flex flex-col justify-between padding-container py-16 text-white text-lg md:flex-row bg-opacity-80 backdrop-blur-sm w-full">
         <div className="flex-1 text-center md:text-left">
           <div className={cn(londrina.className, "capitalize")}>

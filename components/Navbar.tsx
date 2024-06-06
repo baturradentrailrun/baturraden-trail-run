@@ -47,7 +47,7 @@ const Navbar = () => {
                 key={index}
                 className="text-sm  text-white transition duration-200 ease-in-out hover:font-medium  dark:text-white "
               >
-                <Link href={item.path} className="capitalize">
+                <Link href={item.path} className="normal-case">
                   {item.label}
                 </Link>
               </li>

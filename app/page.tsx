@@ -11,14 +11,14 @@ import DownloadApp from "@/components/sections/DownloadApp";
 export default async function Home() {
   return (
     <main>
-      <Hero />
+      <Hero id="#" />
       <Support />
-      <About />
+      <About id="#informasi-event" />
       <Roadmap />
       <Rute />
       <KategoriEvent />
-      <Paket />
-      <DownloadApp />
+      <Paket id="#kategori-event" />
+      <DownloadApp id="#download-app" />
       <Footer />
     </main>
   );

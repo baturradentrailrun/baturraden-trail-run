@@ -3,9 +3,12 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import CustomButton from "../CustomButton";
 
-const About = () => {
+const About = ({ id }: { id: string }) => {
   return (
-    <div className="flex justify-between overflow-hidden flex-col md:flex-row relative ">
+    <div
+      id={id}
+      className="flex justify-between overflow-hidden flex-col md:flex-row relative "
+    >
       <div className="py-10 padding-container w-full  ">
         <h2 className="text-3xl font-bold my-5 ">Ayo Mlayu!</h2>
         <p className="md:w-10/12 mb-10 ">

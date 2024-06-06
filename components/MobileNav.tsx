@@ -14,7 +14,7 @@ const MobileNav = () => {
         animate="enter"
         exit="exit"
         initial="initial"
-        className=" float-end  flex min-h-screen w-1/2 flex-col items-start gap-5 bg-blue-700 p-5 pt-20"
+        className=" float-end  flex min-h-screen w-9/12 flex-col items-start gap-5 bg-blue-700 p-5 pt-20"
       >
         <Curve />
         <p className="w-full border-b-2 border-blue-100 text-[10px] font-bold uppercase leading-[20px] text-white ">
@@ -32,7 +32,7 @@ const MobileNav = () => {
           >
             <Link
               href={item.path}
-              className="flex items-center gap-3 capitalize"
+              className="flex items-center gap-3 normal-case"
             >
               {item.label}
             </Link>
