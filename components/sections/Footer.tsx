@@ -76,7 +76,7 @@ async function Footer() {
               );
             })}
           </div>
-          <p className="opacity-60">
+          <p className="opacity-50">
             All Rights reserved @baturradentrailrun Community 2024
           </p>
         </div>
