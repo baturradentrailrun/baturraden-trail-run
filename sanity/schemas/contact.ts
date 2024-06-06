@@ -1,9 +1,11 @@
+import { PhoneCall } from "lucide-react";
 import { defineType } from "sanity";
 
 export const contact = defineType({
   name: "contact",
   description: "Contact atau social media",
   type: "document",
+  icon: PhoneCall,
   fields: [
     {
       name: "iconAndName",
@@ -15,6 +17,15 @@ export const contact = defineType({
           title: "Icon",
           name: "icon",
           type: "iconPicker",
+          options: {
+            filter: [
+              "fa-whatsapp",
+              "logo_instagram",
+              "fa-tiktok",
+              "fa-facebook",
+              "fa-youtube",
+            ],
+          },
         },
         {
           name: "socialmedia",

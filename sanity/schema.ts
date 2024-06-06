@@ -1,7 +1,13 @@
 import { type SchemaTypeDefinition } from "sanity";
-import { categories, roadmap, sponsorship, contact } from "./schemas";
-import { linkaplikasi } from "./schemas/link-aplikasi";
+import {
+  categories,
+  roadmap,
+  sponsorship,
+  contact,
+  paket,
+  linkaplikasi,
+} from "./schemas";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [categories, sponsorship, roadmap, contact, linkaplikasi],
+  types: [categories, sponsorship, roadmap, contact, linkaplikasi, paket],
 };
