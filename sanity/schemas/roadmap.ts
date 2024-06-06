@@ -4,10 +4,12 @@ import { IoExtensionPuzzleSharp } from "react-icons/io5";
 import { FaHourglassStart } from "react-icons/fa";
 import { BsLightningChargeFill } from "react-icons/bs";
 import { IconType } from "react-icons/lib";
+import { CalendarSearch } from "lucide-react";
 export const roadmap = defineType({
   name: "roadmap",
   title: "Roadmap",
   type: "document",
+  icon: CalendarSearch,
   fields: [
     {
       name: "status",

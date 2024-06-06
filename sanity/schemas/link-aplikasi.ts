@@ -2,10 +2,11 @@ import { defineType } from "sanity";
 import { GrApple } from "react-icons/gr";
 import { BiLogoPlayStore } from "react-icons/bi";
 import { IconType } from "react-icons/lib";
-import { Clock } from "lucide-react";
+import { Clock, Link2 } from "lucide-react";
 export const linkaplikasi = defineType({
   name: "appurl",
   type: "document",
+  icon: Link2,
   fields: [
     {
       name: "name",

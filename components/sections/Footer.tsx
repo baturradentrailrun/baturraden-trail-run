@@ -14,11 +14,11 @@ import {
 
 // Mapping icon names to their corresponding components
 const iconComponents = {
-  "fa-whatsapp": FaWhatsapp,
-  "fa-instagram": FaInstagram,
-  "fa-tiktok": FaTiktok,
-  "fa-facebook": FaFacebook,
-  "fa-youtube": FaYoutube,
+  whatsapp: FaWhatsapp,
+  instagram: FaInstagram,
+  tiktok: FaTiktok,
+  facebook: FaFacebook,
+  youtube: FaYoutube,
 };
 
 async function Footer() {
@@ -55,12 +55,12 @@ async function Footer() {
 
           <div className="flex gap-5 py-4 justify-center md:justify-start">
             {data.map((social: any) => {
+              const iconName = social.name.toLowerCase();
               const IconComponent =
-                iconComponents[social.icon as keyof typeof iconComponents];
-              console.log("Rendering icon:", social.icon, IconComponent);
+                iconComponents[social.name as keyof typeof iconComponents];
 
               if (!IconComponent) {
-                console.error(`Icon component for ${social.icon} not found`);
+                console.error(`Icon component for ${iconName} not found`);
                 return null;
               }
 
@@ -69,7 +69,7 @@ async function Footer() {
                   key={social.name}
                   href={social.url}
                   target="_blank"
-                  className="bg-[#C310C6] p-3  rounded-full flex items-center justify-center"
+                  className="bg-[#C310C6] p-3 rounded-full flex items-center justify-center"
                 >
                   <IconComponent className="text-xl md:text-xl" />
                 </Link>

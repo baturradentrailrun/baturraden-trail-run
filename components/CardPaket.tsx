@@ -8,7 +8,7 @@ const CardPaket = () => {
     <div className="bg-white rounded-2xl shadow-lg lg:w-[240px] overflow-hidden">
       <div className="relative h-[262px] flex flex-col bg-[#EA4335] shadow-lg shadow-[#EA4335]">
         <Image
-          src={"/treeanglered.svg"}
+          src={"/treeangleblue.svg"}
           width={263}
           height={235}
           alt="aksen"
