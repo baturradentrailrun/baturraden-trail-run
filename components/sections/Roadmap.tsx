@@ -19,7 +19,12 @@ const Roadmap = () => {
         <p className="w-9/12 mb-10">
           Nantikan keseruan bareng kita dan jangan lupa catat tanggal asik kita.
         </p>
-        <CustomButton href="#" variants={"whatsapp"} roundedFull>
+        <CustomButton
+          href="#"
+          variants={"whatsapp"}
+          roundedFull
+          className="w-full md:w-fit"
+        >
           Info lanjut hubungi
           <BsWhatsapp />
         </CustomButton>

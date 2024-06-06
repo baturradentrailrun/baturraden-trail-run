@@ -43,7 +43,7 @@ export function CarouselImage() {
       plugins={[plugin.current]}
       className="w-full h-full relative"
     >
-      <CarouselContent className="w-full rounded-2xl">
+      <CarouselContent className="w-full rounded-2xl aspect-square md:aspect-video lg:aspect-auto">
         {CAROUSEL_IMAGE.map((c, index) => {
           return (
             <CarouselItem
@@ -64,11 +64,11 @@ export function CarouselImage() {
         })}
       </CarouselContent>
 
-      <div className="absolute bottom-10 right-20 flex gap-2">
+      <div className="absolute bottom-20 right-20 flex gap-2">
         <CarouselPrevious />
         <CarouselNext />
       </div>
-      <div className="absolute bottom-16 right-10 flex gap-3">
+      <div className="absolute bottom-28 right-10 flex gap-3">
         {Array.from({ length: count }).map((_, index) => (
           <div
             key={index}

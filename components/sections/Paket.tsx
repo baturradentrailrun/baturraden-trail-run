@@ -20,7 +20,12 @@ const Paket = () => {
             hadirkan dua paket yang sudah pasti cocok untuk semua insan berjiwa
             olahraga 🥰
           </p>
-          <CustomButton href="#" variants={"instagram"} roundedFull>
+          <CustomButton
+            href="#"
+            variants={"instagram"}
+            roundedFull
+            className="w-full md:w-fit"
+          >
             Unduh Manual <BsInstagram />
           </CustomButton>
         </div>
