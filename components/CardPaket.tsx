@@ -2,8 +2,15 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 import { badgeVariants } from "./ui/badge";
+import { CardPaketProps } from "@/types";
 
-const CardPaket = () => {
+const CardPaket: React.FC<CardPaketProps> = ({ name, description, harga }) => {
+  const formattedPrice = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    maximumFractionDigits: 0,
+  }).format(harga);
+
   return (
     <div className="bg-white rounded-2xl shadow-lg lg:w-[240px] overflow-hidden">
       <div className="relative h-[262px] flex flex-col bg-[#EA4335] shadow-lg shadow-[#EA4335]">
@@ -23,9 +30,9 @@ const CardPaket = () => {
           >
             paket
           </div>
-          <p className="text-3xl font-black text-white opacity-90">Journey</p>
+          <p className="text-3xl font-black text-white opacity-90">{name}</p>
           <p className="w-9/12  font-semibold text-white opacity-70 ">
-            7 Meter dengan Perjalanan yang menyenangkan
+            {description}
           </p>
         </div>
       </div>
@@ -40,7 +47,7 @@ const CardPaket = () => {
             alt="arrow"
           />
         </div>
-        <p className="text-black font-bold text-xl">Rp. 200.000</p>
+        <p className="text-black font-bold text-xl">{formattedPrice}</p>
       </div>
     </div>
   );

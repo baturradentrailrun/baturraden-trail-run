@@ -6,8 +6,8 @@ import Image from "next/image";
 
 const Rute = () => {
   return (
-    <div className="bg-slate-900 relative flex lg:justify-center flex-col lg:flex-row max-container">
-      <div className="relative">
+    <div className="bg-slate-900 relative flex lg:justify-center flex-col lg:flex-row ">
+      <div className="relative w-full min-h-[578px]">
         <h1
           className={cn(buttonVariants(), "rounded-full absolute top-5 left-5")}
         >
@@ -37,7 +37,7 @@ const Rute = () => {
           </div>
         </div>
       </div>
-      <div className="relative">
+      <div className="relative w-full min-h-[578px]">
         <h1
           className={cn(buttonVariants(), "rounded-full absolute top-5 left-5")}
         >

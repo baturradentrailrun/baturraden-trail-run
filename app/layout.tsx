@@ -18,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={plusJakartaSans.className} suppressHydrationWarning>
-        <Analytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -27,6 +26,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

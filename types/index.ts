@@ -12,3 +12,9 @@ export type CarouselImageProps = {
   title: string;
   imageUrl: string;
 };
+
+export type CardPaketProps = {
+  name: string;
+  description: string;
+  harga: number;
+};
