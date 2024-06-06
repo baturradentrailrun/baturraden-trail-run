@@ -36,5 +36,16 @@ async function getSocialMedia() {
   const data = await client.fetch(query);
   return data;
 }
+async function getPaket() {
+  const query = groq`
+  *[_type == "paket"]{
+    name,
+      description,
+      harga
+  }
+  `;
+  const data = await client.fetch(query);
+  return data;
+}
 
-export { getSponsorship, getRoadmap, getSocialMedia };
+export { getSponsorship, getRoadmap, getSocialMedia, getPaket };
