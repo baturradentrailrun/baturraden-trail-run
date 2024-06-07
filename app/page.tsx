@@ -7,11 +7,13 @@ import Roadmap from "@/components/sections/Roadmap";
 import Rute from "@/components/sections/Rute";
 import Paket from "@/components/sections/Paket";
 import DownloadApp from "@/components/sections/DownloadApp";
+import UnderDevelopment from "@/components/sections/UnderDevelopment";
 
 export default async function Home() {
   return (
     <main>
-      <Hero id="#" />
+      <UnderDevelopment />
+      {/* <Hero id="#" />
       <Support />
       <About id="informasi-event" />
       <Roadmap />
@@ -19,7 +21,7 @@ export default async function Home() {
       <KategoriEvent />
       <Paket id="kategori-event" />
       <DownloadApp id="download-app" />
-      <Footer id="kontak" />
+      <Footer id="kontak" /> */}
     </main>
   );
 }

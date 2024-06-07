@@ -5,7 +5,6 @@ import { menuSlide, slide } from "@/constant/anim";
 import { NAVBAR } from "@/constant";
 import Link from "next/link";
 import Curve from "./Curve";
-import Overlay from "./Overlay";
 
 interface MobileNavProps {
   closeMenu: () => void;
