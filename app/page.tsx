@@ -8,20 +8,22 @@ import Rute from "@/components/sections/Rute";
 import Paket from "@/components/sections/Paket";
 import DownloadApp from "@/components/sections/DownloadApp";
 import UnderDevelopment from "@/components/sections/UnderDevelopment";
+import RunWithView from "@/components/sections/RunWithView";
 
 export default async function Home() {
   return (
     <main>
-      <UnderDevelopment />
-      {/* <Hero id="#" />
+      {/* <UnderDevelopment /> */}
+      <Hero id="#" />
       <Support />
       <About id="informasi-event" />
       <Roadmap />
       <Rute />
       <KategoriEvent />
       <Paket id="kategori-event" />
+      <RunWithView />
       <DownloadApp id="download-app" />
-      <Footer id="kontak" /> */}
+      <Footer id="kontak" />
     </main>
   );
 }

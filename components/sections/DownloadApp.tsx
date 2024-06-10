@@ -36,7 +36,7 @@ function DownloadApp({ id }: { id: string }) {
               />
               <div>
                 <p>GET IT ON</p>
-                <p className="font-bold">Google Play</p>
+                <p className="font-bold">App Store</p>
               </div>
             </div>
           </div>
