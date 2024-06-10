@@ -13,8 +13,8 @@ import Yoayo from "@/components/sections/Yoayo";
 export default async function Home() {
   return (
     <main>
-      <UnderDevelopment />
-      {/* <Hero id="#" />
+      {/* <UnderDevelopment /> */}
+      <Hero id="#" />
       <Support />
       <About id="informasi-event" />
       <Roadmap />
@@ -23,7 +23,7 @@ export default async function Home() {
       <Paket id="kategori-event" />
       <Yoayo />
       <DownloadApp id="download-app" />
-      <Footer id="kontak" /> */}
+      <Footer id="kontak" />
     </main>
   );
 }
