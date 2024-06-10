@@ -21,14 +21,6 @@ const About = ({ id }: { id: string }) => {
           internasional, daftar acara kami yang komprehensif menempatkan dunia
           lari di ujung jari Anda.
         </p>
-        <div className="flex gap-2 z-10 relative justify-center md:justify-normal">
-          <CustomButton href="#" variants={"blue"} size={"lg"}>
-            Daftar sekarang
-          </CustomButton>
-          <CustomButton href="#" size={"lg"}>
-            Kunjungi sosmed
-          </CustomButton>
-        </div>
       </div>
       <div className="md:w-10/12 bg-[#003E9C] relative h-[380px] lg:h-[500px] md:h-auto flex flex-col justify-between p-4 pb-20 order-first md:order-last overflow-hidden md:overflow-visible">
         <Image

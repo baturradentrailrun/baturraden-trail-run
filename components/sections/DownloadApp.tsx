@@ -4,6 +4,8 @@ import React from "react";
 import { IoIosInformationCircle } from "react-icons/io";
 import { buttonVariants } from "../ui/button";
 import Image from "next/image";
+import CustomButton from "../CustomButton";
+import { BsWhatsapp } from "react-icons/bs";
 
 function DownloadApp({ id }: { id: string }) {
   return (
@@ -15,7 +17,13 @@ function DownloadApp({ id }: { id: string }) {
             tetapi juga untuk kamu yang sedang memulai gaya hidup sehat.
           </p>
           <div className="flex gap-2 text-white">
-            <div className="flex gap-2  bg-black px-5 py-2 rounded-lg border-4 border-slate-600">
+            <Link
+              href={
+                "https://play.google.com/store/apps/details?id=asia.yoayo.yoayo"
+              }
+              target="_blank"
+              className="flex gap-2  bg-black px-5 py-2 rounded-lg border-4 border-slate-600"
+            >
               <Image
                 src={"playstore.svg"}
                 width={30}
@@ -26,8 +34,14 @@ function DownloadApp({ id }: { id: string }) {
                 <p>GET IT ON</p>
                 <p className="font-bold">Google Play</p>
               </div>
-            </div>
-            <div className="flex gap-4 text-white bg-black px-5 py-2 rounded-lg border-4 border-slate-600">
+            </Link>
+            <Link
+              href={
+                "https://apps.apple.com/us/app/yoayo-active-community/id1481334742"
+              }
+              target="_blank"
+              className="flex gap-4 text-white bg-black px-5 py-2 rounded-lg border-4 border-slate-600"
+            >
               <Image
                 src={"appstore.svg"}
                 width={30}
@@ -38,7 +52,7 @@ function DownloadApp({ id }: { id: string }) {
                 <p>GET IT ON</p>
                 <p className="font-bold">App Store</p>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
 
@@ -47,22 +61,22 @@ function DownloadApp({ id }: { id: string }) {
         <div className="space-y-8 flex-1">
           <div className="space-y-2">
             <p className="text-[#003E9C]">Untuk Pelari dan Semua Orang</p>
-            <p className="text-2xl font-bold">Booking Trail Run</p>
+            <p className="text-2xl font-bold">Info lebih lanjut</p>
           </div>
           <p>
-            Daftar sekarang juga dan dapatkan paket lengkat festival olahraga
-            kamu.
+            Jika kamu memiliki pertanyaan lebih lanjut tentang aplikasi YoAyo,
+            jangan ragu untuk menghubungi kami.
           </p>
-          <Link
-            href={"#"}
-            className={cn(
-              buttonVariants({ variant: "whatsapp" }),
-              "bg-[#003E9C] capitalize flex gap-2 items-center w-fit"
-            )}
+          <CustomButton
+            href="https://wa.me/6289526894448"
+            target="_blank"
+            variants={"whatsapp"}
+            roundedFull
+            className="w-full md:w-fit"
           >
-            Info lebih lanjut
-            <IoIosInformationCircle className="text-xl" />
-          </Link>
+            WhatsApp
+            <BsWhatsapp />
+          </CustomButton>
         </div>
       </section>
     </>

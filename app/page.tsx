@@ -13,7 +13,6 @@ import Yoayo from "@/components/sections/Yoayo";
 export default async function Home() {
   return (
     <main>
-      {/* <UnderDevelopment /> */}
       <Hero id="#" />
       <Support />
       <About id="informasi-event" />
