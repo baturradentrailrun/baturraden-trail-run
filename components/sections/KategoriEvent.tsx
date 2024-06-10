@@ -1,19 +1,18 @@
 import React from "react";
-
-import { CarouselImage } from "../Carousel";
 import CustomButton from "../CustomButton";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa";
+import { VideoComponent } from "../video-comonent";
 
 const KategoriEvent = () => {
   return (
-    <div className="bg-slate-950 padding-container flex justify-between flex-col md:flex-row lg:py-20 py-10 md:py-16  gap-8">
+    <div className="bg-slate-950 padding-container flex lg:justify-between flex-col justify-center md:flex-row lg:py-20 py-10 md:py-16  gap-8">
       <div className="text-white">
         <h1 className="font-bold text-3xl text-white ">
-          Pesan peduli sehat 💌
+          Cara Mendaftar Aplikasi Yoayo 📱
         </h1>
         <p className="lg:w-7/12 my-5">
-          Kami peduli untuknya kami hadirkan Baturaden Trail Run, untuknya kita
-          membangun masa depan yang lebih sehat 🤩.
+          Temukan langkah-langkah mudah untuk mendaftar aplikasi Yoayo dan mulai
+          menikmati manfaatnya sekarang juga!
         </p>
         <CustomButton
           href="#download-app"
@@ -21,11 +20,11 @@ const KategoriEvent = () => {
           className="w-full md:w-fit flex justify-center items-center gap-2"
           roundedFull
         >
-          Unduh Aplikasi <FaArrowRightLong />
+          Unduh Aplikasi <FaArrowRight />
         </CustomButton>
       </div>
       <div className="">
-        <CarouselImage />
+        <VideoComponent />
       </div>
     </div>
   );

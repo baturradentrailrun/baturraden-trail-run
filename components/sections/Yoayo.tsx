@@ -3,8 +3,8 @@ import React from "react";
 
 const Yoayo = () => {
   return (
-    <section className="flex h-[90vh] flex-col lg:flex-row bg-[#00112B] relative padding-container overflow-hidden">
-      <div className="self-end w-full ">
+    <section className="flex  flex-col-reverse lg:flex-row bg-[#00112B] relative padding-container pt-10 overflow-hidden">
+      <div className="w-full lg:w-1/2 lg:self-end mx-auto">
         <Image src={"/Phone.webp"} height={488} width={452} alt="yoayo" />
       </div>
       <Image
@@ -15,36 +15,21 @@ const Yoayo = () => {
         className="absolute top-[-400px] left-[150px] z-15"
       />
 
-      <div className="items-center w-full h-full z-20 flex justify-center">
-        <div className="relative">
-          <Image
-            src={"/backsneaker.webp"}
-            height={500}
-            width={500}
-            alt="back"
-            className="mt-32"
-          />
-          <Image
-            src={"/LeftLiquid.svg"}
-            height={133}
-            width={243}
-            alt="back"
-            className="-mt-[380px] ml-64"
-          />
-          <Image
-            src={"/r-liq.svg"}
-            height={133}
-            width={243}
-            alt="back"
-            className="  -mt-[100px] -ml-32"
-          />
-          <Image
-            src={"/frontsneaker.webp"}
-            height={500}
-            width={500}
-            alt="front"
-            className="-mt-[270px] -ml-[130px]"
-          />
+      <div className="w-full lg:w-1/2 flex-1 mb-10 lg:mb-0">
+        <div className="items-center w-full h-full flex justify-start lg:justify-center">
+          <div className="relative text-white">
+            <h1 className="text-5xl font-bold text-start">Aplikasi Yoayo</h1>
+            <p className="text-lg mt-4 lg:w-10/12">
+              Temukan dan jadwalkan kegiatan olahraga dengan mudah menggunakan
+              aplikasi Yoayo. Nikmati fitur-fitur seperti pencarian tempat
+              olahraga, pembayaran yang aman, dan jadwal kegiatan yang
+              terintegrasi.
+            </p>
+            <p className="text-lg mt-4 lg:w-10/12">
+              Bergabunglah sekarang dan mulailah perjalanan olahraga Anda dengan
+              Yoayo!
+            </p>
+          </div>
         </div>
       </div>
     </section>

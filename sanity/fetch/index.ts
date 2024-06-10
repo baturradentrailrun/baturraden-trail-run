@@ -52,11 +52,12 @@ async function getPaket() {
 }
 
 const fetchPaketBySlug = async (slug: string): Promise<Paket | null> => {
-  const query = groq`*[_type == "paket" && slug.current == $slug][0]`;
+  const query = `*[_type == "paket" && slug.current == $slug][0]`;
   const params = { slug };
-  const data = await client.fetch(query, params);
+  const data: Paket | null = await client.fetch(query, params);
   return data;
 };
+
 export {
   getSponsorship,
   getRoadmap,

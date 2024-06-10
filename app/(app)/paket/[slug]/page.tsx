@@ -1,7 +1,18 @@
+"use client";
 import { fetchPaketBySlug } from "@/sanity/fetch";
 import { Paket } from "@/types";
-import { PortableText, PortableTextComponents } from "next-sanity";
-import React from "react";
+import { PortableText } from "@portabletext/react";
+import Components from "@/components/PortableTextComponent";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+} from "@/components/ui/card";
 
 interface PaketPageProps {
   params: {
@@ -9,57 +20,68 @@ interface PaketPageProps {
   };
 }
 
-const components: PortableTextComponents = {
-  block: {
-    h1: ({ children }) => (
-      <h1 className="text-4xl font-bold my-4">{children}</h1>
-    ),
-    h2: ({ children }) => (
-      <h2 className="text-3xl font-semibold my-3">{children}</h2>
-    ),
-    h3: ({ children }) => (
-      <h3 className="text-2xl font-medium my-2">{children}</h3>
-    ),
-    h4: ({ children }) => (
-      <h4 className="text-xl font-medium my-2">{children}</h4>
-    ),
-    blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-gray-500 pl-4 italic my-4">
-        {children}
-      </blockquote>
-    ),
-    normal: ({ children }) => <p className="my-2">{children}</p>,
-  },
-  list: {
-    bullet: ({ children }) => (
-      <ul className="list-disc list-inside my-4">{children}</ul>
-    ),
-    number: ({ children }) => (
-      <ol className="list-decimal list-inside my-4">{children}</ol>
-    ),
-  },
-  listItem: {
-    bullet: ({ children }) => <li className="my-1">{children}</li>,
-  },
-};
-
-const PaketPage = async ({ params }: PaketPageProps) => {
+const PaketPage = ({ params }: PaketPageProps) => {
   const { slug } = params;
-  const paket = await fetchPaketBySlug(slug);
+  const [paket, setPaket] = useState<Paket | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+
+      try {
+        const data = await fetchPaketBySlug(slug);
+        setPaket(data);
+      } catch (err) {
+        setError("Error loading paket");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [slug]);
+
+  if (loading) {
+    return <div className="text-center py-10">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="text-center py-10">{error}</div>;
+  }
+
   if (!paket) {
     return <div className="text-center py-10">Paket tidak ditemukan</div>;
   }
 
-  const { name, harga, description, blockContent }: Paket = paket;
+  const { name, harga, description, blockContent } = paket;
 
   return (
-    <div className="max-w-3xl mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">{name}</h1>
-      <p className="text-lg mb-2">{description}</p>
-      <p className="text-lg font-semibold mb-4">Harga: {harga}</p>
-      <div className="prose">
-        <PortableText value={blockContent} components={components} />
+    <div className="w-full  p-4 lg:p-10">
+      <div className="mb-5  w-full pb-5">
+        <Link className={cn(buttonVariants())} href={"/"}>
+          Kembali
+        </Link>
       </div>
+      <Card>
+        <CardHeader>
+          <h1 className="text-3xl font-bold mb-4">{name}</h1>
+          <CardDescription>
+            <p className="mb-2">{description}</p>
+            <p className=" font-semibold mb-4">Harga: Rp. {harga}</p>
+            <p className="capitalize font-bold text-lg mb-3 text-white">
+              info paket :
+            </p>
+          </CardDescription>
+          <CardContent>
+            <div className=" dark:text-white text-slate-900">
+              <PortableText value={blockContent} components={Components} />
+            </div>
+          </CardContent>
+        </CardHeader>
+      </Card>
     </div>
   );
 };

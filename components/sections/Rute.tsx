@@ -55,13 +55,14 @@ const Rute = () => {
           <div className="flex flex-col items-center justify-center padding-container">
             <div className="flex gap-3 items-center">
               <div className="text-xl font-bold text-white">
-                Rute Offline Race <span className="text-yellow-600">7km</span>
+                Rute Offline Race <span className="text-yellow-600">21km</span>
               </div>
               <Badge className="rounded-full">Info rute</Badge>
             </div>
             <p className="text-white text-center">
-              Taman Botani – Pringsewu Baturraden – Curug Bayan – Curug Jenggala
-              – Pancuran 7 – Lokawisata Baturraden – Taman Botani
+              Taman Botani – Pringsewu Baturraden – Curug Bayan – Pagubugan
+              Melung - Curug Jenggala – Pancuran 7 – Lokawisata Baturraden –
+              Taman Botani
             </p>
           </div>
         </div>

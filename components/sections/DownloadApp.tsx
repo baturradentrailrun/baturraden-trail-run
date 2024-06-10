@@ -19,7 +19,7 @@ function DownloadApp({ id }: { id: string }) {
           <div className="flex gap-2 text-white">
             <Link
               href={
-                "https://play.google.com/store/apps/details?id=asia.yoayo.yoayo"
+                "https://play.google.com/store/apps/details?id=asia.yoayo.yoayo&pcampaignid=web_share"
               }
               target="_blank"
               className="flex gap-2  bg-black px-5 py-2 rounded-lg border-4 border-slate-600"
