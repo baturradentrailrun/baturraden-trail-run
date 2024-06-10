@@ -1,5 +1,6 @@
 import { groq } from "next-sanity";
 import { client } from "../lib/client";
+import { Paket } from "@/types";
 
 async function getRoadmap() {
   const query = groq`
@@ -41,11 +42,25 @@ async function getPaket() {
   *[_type == "paket"]{
     name,
       description,
-      harga
+      harga,
+      slug,
+      blockContent
   }
   `;
   const data = await client.fetch(query);
   return data;
 }
 
-export { getSponsorship, getRoadmap, getSocialMedia, getPaket };
+const fetchPaketBySlug = async (slug: string): Promise<Paket | null> => {
+  const query = groq`*[_type == "paket" && slug.current == $slug][0]`;
+  const params = { slug };
+  const data = await client.fetch(query, params);
+  return data;
+};
+export {
+  getSponsorship,
+  getRoadmap,
+  getSocialMedia,
+  getPaket,
+  fetchPaketBySlug,
+};

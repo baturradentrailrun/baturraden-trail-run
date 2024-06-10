@@ -19,3 +19,24 @@ export type CardPaketProps = {
   harga: number;
   index?: number;
 };
+
+// types/index.ts
+export interface Paket {
+  _id: string;
+  name: string;
+  description: string;
+  harga: number;
+  slug: {
+    current: string;
+  };
+  blockContent: blockContent[];
+}
+
+export interface blockContent {
+  _type: "block";
+  _key: string;
+  children: {
+    _key: string;
+    text: string;
+  }[];
+}

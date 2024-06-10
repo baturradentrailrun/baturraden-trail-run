@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-import { plusJakartaSans } from "./fonts";
+import { plusJakartaSans } from "../fonts";
 import { ThemeProvider } from "@/components/provider/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { cn } from "@/lib/utils";
