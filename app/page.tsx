@@ -12,8 +12,8 @@ import UnderDevelopment from "@/components/sections/UnderDevelopment";
 export default async function Home() {
   return (
     <main>
-      {/* <UnderDevelopment /> */}
-      <Hero id="#" />
+      <UnderDevelopment />
+      {/* <Hero id="#" />
       <Support />
       <About id="informasi-event" />
       <Roadmap />
@@ -21,7 +21,7 @@ export default async function Home() {
       <KategoriEvent />
       <Paket id="kategori-event" />
       <DownloadApp id="download-app" />
-      <Footer id="kontak" />
+      <Footer id="kontak" /> */}
     </main>
   );
 }
