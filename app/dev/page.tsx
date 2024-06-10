@@ -10,11 +10,10 @@ import DownloadApp from "@/components/sections/DownloadApp";
 import UnderDevelopment from "@/components/sections/UnderDevelopment";
 import Yoayo from "@/components/sections/Yoayo";
 
-export default async function Home() {
+export default async function Dev() {
   return (
     <main>
-      <UnderDevelopment />
-      {/* <Hero id="#" />
+      <Hero id="#" />
       <Support />
       <About id="informasi-event" />
       <Roadmap />
@@ -23,7 +22,7 @@ export default async function Home() {
       <Paket id="kategori-event" />
       <Yoayo />
       <DownloadApp id="download-app" />
-      <Footer id="kontak" /> */}
+      <Footer id="kontak" />
     </main>
   );
 }
