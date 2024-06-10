@@ -1,4 +1,4 @@
-import { londrina } from "@/app/(app)/fonts";
+import { londrina } from "@/app/fonts";
 import { cn } from "@/lib/utils";
 import React from "react";
 

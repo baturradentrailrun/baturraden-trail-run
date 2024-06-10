@@ -1,4 +1,4 @@
-import { londrina, plusJakartaSans } from "@/app/(app)/fonts";
+import { londrina, plusJakartaSans } from "@/app/fonts";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
