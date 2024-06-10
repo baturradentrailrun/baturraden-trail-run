@@ -13,8 +13,10 @@ export const metadata: Metadata = {
   applicationName: "Baturaden Trail Run",
   metadataBase: new URL("https://baturradentrailrun.com"),
   openGraph: {
-    title: "Baturraden Trail RUn",
-    description: "Baturraden trail run ",
+    title: "Baturraden Trail Run",
+    description: "Wujudkan generasi sehat bersama Baturaden Trail Run",
+    countryName: "Indonesia",
+    emails: ["baturradentrailrun@gmail.com"],
     url: "https://baturradentrailrun.com",
     siteName: "Baturraden Trail Run",
     type: "website",
