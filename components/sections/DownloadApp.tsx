@@ -69,7 +69,7 @@ function DownloadApp({ id }: { id: string }) {
           </p>
           <CustomButton
             href="https://wa.me/6289526894448"
-            target="_blank"
+            _blank
             variants={"whatsapp"}
             roundedFull
             className="w-full md:w-fit"

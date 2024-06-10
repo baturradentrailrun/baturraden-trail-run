@@ -2,7 +2,7 @@ import React from "react";
 
 import { CarouselImage } from "../Carousel";
 import CustomButton from "../CustomButton";
-import { BsInstagram } from "react-icons/bs";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const KategoriEvent = () => {
   return (
@@ -16,12 +16,12 @@ const KategoriEvent = () => {
           membangun masa depan yang lebih sehat 🤩.
         </p>
         <CustomButton
-          href="#"
-          variants={"instagram"}
-          className="w-full md:w-fit"
+          href="#download-app"
+          variants={"default"}
+          className="w-full md:w-fit flex justify-center items-center gap-2"
           roundedFull
         >
-          Unduh Manual <BsInstagram />
+          Unduh Aplikasi <FaArrowRightLong />
         </CustomButton>
       </div>
       <div className="">

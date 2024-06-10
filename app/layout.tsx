@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import { plusJakartaSans } from "./fonts";
+
+import { plusJakartaSans } from "./(app)/fonts";
 import { ThemeProvider } from "@/components/provider/theme-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { cn } from "@/lib/utils";
@@ -42,7 +42,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
           {children}
           <Analytics />
           <SpeedInsights />

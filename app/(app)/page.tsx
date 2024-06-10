@@ -7,12 +7,14 @@ import Roadmap from "@/components/sections/Roadmap";
 import Rute from "@/components/sections/Rute";
 import Paket from "@/components/sections/Paket";
 import DownloadApp from "@/components/sections/DownloadApp";
-import UnderDevelopment from "@/components/sections/UnderDevelopment";
+
 import Yoayo from "@/components/sections/Yoayo";
+import Navbar from "@/components/Navbar";
 
 export default async function Home() {
   return (
     <main>
+      <Navbar />
       <Hero id="#" />
       <Support />
       <About id="informasi-event" />
