@@ -10,6 +10,7 @@ import DownloadApp from "@/components/sections/DownloadApp";
 
 import Yoayo from "@/components/sections/Yoayo";
 import Navbar from "@/components/Navbar";
+import Infolebihlanjut from "@/components/sections/Infolebihlanjut";
 
 export default async function Home() {
   return (
@@ -19,7 +20,8 @@ export default async function Home() {
       <Support />
       <About id="informasi-event" />
       <Roadmap />
-      <Rute />
+      {/* <Rute /> */}
+      <Infolebihlanjut />
       <Paket id="kategori-event" />
       <Yoayo />
       <KategoriEvent />

@@ -15,6 +15,7 @@ import { getPaketBySlug } from "@/sanity/fetch";
 import { ChevronLeft } from "lucide-react";
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface PaketPageProps {
   params: {
@@ -54,19 +55,7 @@ export default function PaketLayout({
         <Logo />
         <ModeToggle />
       </nav>
-      <div>
-        <Breadcrumb className="padding-container">
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/">Beranda</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>{params.slug}</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-      </div>
+
       {children}
       <Footer id="kontak" />
     </main>
