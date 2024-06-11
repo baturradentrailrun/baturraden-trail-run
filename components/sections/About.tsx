@@ -39,21 +39,21 @@ const About = ({ id }: { id: string }) => {
           width={639}
           height={496}
           alt="about image"
-          className="absolute bottom-0 left-[-100px]"
+          className="absolute -bottom-5 left-[-100px]"
         />
         <Image
           src={"/aboutimage.png"}
           width={675}
           height={496}
           alt="about image"
-          className="absolute -left-8 top-12 scale-110 md:top-1/2 md:scale-125 lg:scale-100 lg:top-8"
+          className="absolute -left-16 top-12 scale-110 md:top-1/2 md:scale-125 lg:scale-100 lg:top-32"
         />
         <Image
           src={"/aboutvector.svg"}
           width={527}
           height={496}
           alt="about image"
-          className="absolute bottom-0 right-0"
+          className="absolute -bottom-5 right-0"
         />
       </div>
     </div>
