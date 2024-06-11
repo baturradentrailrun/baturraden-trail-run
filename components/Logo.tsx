@@ -6,7 +6,12 @@ const Logo = () => {
   return (
     <div className="flex justify-center items-center flex-col w-fit">
       <div className="text-xs font-black text-pink-600">baturraden</div>
-      <div className={cn(londrina.className, "text-2xl font-black")}>
+      <div
+        className={cn(
+          londrina.className,
+          "text-2xl font-black text-[#97de00] dark:text-white"
+        )}
+      >
         Trail Run
       </div>
     </div>

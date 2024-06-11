@@ -51,17 +51,19 @@ async function getPaket() {
   return data;
 }
 
-const fetchPaketBySlug = async (slug: string): Promise<Paket | null> => {
-  const query = `*[_type == "paket" && slug.current == $slug][0]`;
-  const params = { slug };
-  const data: Paket | null = await client.fetch(query, params);
+async function getPaketBySlug(slug: string) {
+  const query = groq`
+    *[_type == "paket" && slug.current == $slug][0]{
+      _id,
+      name,
+      description,
+      harga,
+      slug,
+      blockContent
+    }
+  `;
+  const data = await client.fetch(query, { slug });
   return data;
-};
+}
 
-export {
-  getSponsorship,
-  getRoadmap,
-  getSocialMedia,
-  getPaket,
-  fetchPaketBySlug,
-};
+export { getSponsorship, getRoadmap, getSocialMedia, getPaket, getPaketBySlug };
