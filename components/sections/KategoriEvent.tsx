@@ -5,7 +5,7 @@ import { VideoComponent } from "../video-comonent";
 
 const KategoriEvent = () => {
   return (
-    <div className="bg-slate-950 padding-container flex lg:justify-between flex-col justify-center md:flex-row lg:py-20 py-10 md:py-16  gap-8">
+    <div className="bg-slate-950 padding-container flex lg:justify-between flex-col items-center justify-center md:flex-row lg:py-20 py-10 md:py-16  gap-8">
       <div className="text-white">
         <h1 className="font-bold text-3xl text-white ">
           Cara Mendaftar Aplikasi Yoayo 📱

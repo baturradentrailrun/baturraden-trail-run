@@ -8,7 +8,7 @@ export const VideoComponent = () => {
         height="300"
         allow="autoplay"
         allowFullScreen
-        className="rounded-2xl w-[330px] lg:w-[600px]"
+        className="rounded-2xl w-[300px] border border-slate-900 shadow-lg lg:w-[600px]"
       ></iframe>
     </div>
   );
