@@ -11,7 +11,7 @@ const CardInfoItem = ({
 }) => {
   const { description, status, duration } = data;
   const { start, end } = duration;
-
+  console.log(status);
   const formatDateToIndonesian = (
     dateString: string,
     isStart: boolean
@@ -43,7 +43,7 @@ const CardInfoItem = ({
       <h3
         className={cn(
           bgColor,
-          "font-bold p-2 rounded-full lg:rounded-lg text-center  text-white capitalize lg:w-[200px] "
+          "font-bold p-2 rounded-full lg:rounded-sm text-center  text-white capitalize lg:w-[200px] "
         )}
       >
         {status}

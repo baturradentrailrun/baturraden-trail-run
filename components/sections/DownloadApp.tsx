@@ -68,7 +68,7 @@ function DownloadApp({ id }: { id: string }) {
             jangan ragu untuk menghubungi kami.
           </p>
           <CustomButton
-            href="https://wa.me/6289526894448"
+            href="https://wa.me/6281377722127"
             _blank
             variants={"whatsapp"}
             roundedFull
