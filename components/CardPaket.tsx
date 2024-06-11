@@ -25,9 +25,9 @@ const CardPaket: React.FC<CardPaketProps> = ({
   const textColor = isLeft ? "text-[#EA4335]" : "text-blue-500";
 
   return (
-    <div className="bg-white min-w-full lg:w-[240px] rounded-2xl shadow-lg overflow-hidden">
+    <div className="bg-white  w-full rounded-2xl shadow-lg overflow-hidden ">
       <div
-        className="relative min-h-[262px] min-w-full flex flex-col shadow-lg"
+        className="relative min-h-[262px] w-full justify-center items-center flex flex-col shadow-lg"
         style={{ backgroundColor, boxShadow: `0 0 10px ${backgroundColor}` }}
       >
         <Image
@@ -35,7 +35,7 @@ const CardPaket: React.FC<CardPaketProps> = ({
           width={263}
           height={235}
           alt="aksen"
-          objectFit="cover"
+          objectFit="fill"
           objectPosition="center"
           className="absolute -bottom-5 blur-xl z-0"
         />

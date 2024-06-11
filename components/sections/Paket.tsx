@@ -49,7 +49,7 @@ const Paket: React.FC<PaketProps> = ({ id }) => {
       id={id}
       className="bg-[#F2F2F2] padding-container flex lg:flex-row flex-col-reverse justify-between w-full py-10 gap-10 lg:gap-0"
     >
-      <div className="w-full flex flex-col lg:flex-row justify-start gap-5 items-center border-t-2 lg:border-t-0 lg:border-r-2 border-dashed border-r-slate-500 lg:pr-5 pt-10 lg:pt-0">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full">
         {paket.map((p: CardPaketProps, index: number) => (
           <div key={index}>
             <CardPaket
@@ -62,7 +62,7 @@ const Paket: React.FC<PaketProps> = ({ id }) => {
           </div>
         ))}
       </div>
-      <div className="w-full flex items-center justify-center">
+      <div className="w-full lg:w-6/12 flex items-center justify-center">
         <div className="lg:w-9/12 lg:mx-auto flex flex-col gap-5">
           <h2 className="text-slate-900 text-3xl font-bold text-left w-fit">
             Sesuaikan larimu!
