@@ -20,7 +20,10 @@ export const roadmap = defineType({
       options: {
         list: [
           { title: "Virtual Run", value: "virtual run" },
-          { title: "Opening Trail Run ", value: "trail run opening & rush" },
+          {
+            title: "Opening Trail Run & Race ",
+            value: "trail run opening & race",
+          },
           { title: "Baturraden Trail Run", value: "baturraden trail run" },
         ],
       },
@@ -65,7 +68,7 @@ export const roadmap = defineType({
       const { title, start, end } = selection;
       const icon: { [key: string]: IconType } = {
         "virtual run": FaHourglassStart,
-        "trail run opening & rush": IoExtensionPuzzleSharp,
+        "trail run opening & race": IoExtensionPuzzleSharp,
         "baturraden trail run": BsLightningChargeFill,
       };
       return {

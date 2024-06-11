@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import { CardInfoItemProps } from "@/types";
 import React from "react";
-import { Skeleton } from "./ui/skeleton";
 
 const CardInfoItem = ({
   data,
