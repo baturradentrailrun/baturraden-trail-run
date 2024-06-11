@@ -20,9 +20,9 @@ export default async function Home() {
       <About id="informasi-event" />
       <Roadmap />
       <Rute />
-      <KategoriEvent />
       <Paket id="kategori-event" />
       <Yoayo />
+      <KategoriEvent />
       <DownloadApp id="download-app" />
       <Footer id="kontak" />
     </main>
