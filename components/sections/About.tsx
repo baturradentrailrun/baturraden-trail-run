@@ -9,7 +9,7 @@ const About = ({ id }: { id: string }) => {
       id={id}
       className="flex justify-between overflow-hidden flex-col md:flex-row relative "
     >
-      <div className="py-10 padding-container w-full  ">
+      <div className="py-10 padding-container w-full padding-container  ">
         <h2 className="text-3xl font-bold my-5 ">Ayo Mlayu!</h2>
         <p className="md:w-10/12 mb-10 ">
           Baturraden Trail Run merupakan salah satu bagian dari event Baturraden
