@@ -11,7 +11,7 @@ const CardInfoItem = ({
 }) => {
   const { description, status, duration } = data;
   const { start, end } = duration;
-  console.log(status);
+
   const formatDateToIndonesian = (
     dateString: string,
     isStart: boolean

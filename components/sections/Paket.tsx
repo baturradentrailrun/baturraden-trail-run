@@ -15,7 +15,6 @@ const Paket: React.FC<PaketProps> = ({ id }) => {
   const [paket, setPaket] = useState<CardPaketProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  console.log(paket);
 
   useEffect(() => {
     const fetchData = async () => {
