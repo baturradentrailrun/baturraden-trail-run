@@ -16,10 +16,10 @@ export const roadmap = defineType({
       title: "Status",
       type: "string",
       description: "status dari roadmap",
-      initialValue: "registrasi",
+      initialValue: "virtual run",
       options: {
         list: [
-          { title: "Firtual Run", value: "firtual run" },
+          { title: "Virtual Run", value: "virtual run" },
           { title: "Opening Trail Run ", value: "opening trail run" },
           { title: "Baturraden Trail Run", value: "baturraden trail run" },
         ],
@@ -64,8 +64,8 @@ export const roadmap = defineType({
     prepare(selection: any) {
       const { title, start, end } = selection;
       const icon: { [key: string]: IconType } = {
-        registrasi: FaHourglassStart,
-        opening: IoExtensionPuzzleSharp,
+        "virtual run": FaHourglassStart,
+        "opening trail run": IoExtensionPuzzleSharp,
         "baturraden trail run": BsLightningChargeFill,
       };
       return {

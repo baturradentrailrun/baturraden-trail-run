@@ -5,7 +5,7 @@ import { PortableText } from "@portabletext/react";
 import Components from "@/components/PortableTextComponent";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
   Card,
@@ -13,6 +13,7 @@ import {
   CardDescription,
   CardHeader,
 } from "@/components/ui/card";
+import { useRouter } from "next/navigation";
 
 interface PaketPageProps {
   params: {
@@ -21,6 +22,7 @@ interface PaketPageProps {
 }
 
 const PaketPage = ({ params }: PaketPageProps) => {
+  const router = useRouter();
   const { slug } = params;
   const [paket, setPaket] = useState<Paket | null>(null);
   const [loading, setLoading] = useState(true);
@@ -61,9 +63,7 @@ const PaketPage = ({ params }: PaketPageProps) => {
   return (
     <div className="w-full  p-4 lg:p-10">
       <div className="mb-5  w-full pb-5">
-        <Link className={cn(buttonVariants())} href={"/"}>
-          Kembali
-        </Link>
+        <Button onClick={() => router.back()}>Kembali</Button>
       </div>
       <Card>
         <CardHeader>
@@ -71,9 +71,7 @@ const PaketPage = ({ params }: PaketPageProps) => {
           <CardDescription>
             <p className="mb-2">{description}</p>
             <p className=" font-semibold mb-4">Harga: Rp. {harga}</p>
-            <p className="capitalize font-bold text-lg mb-3 text-white">
-              info paket :
-            </p>
+            <p className="capitalize font-bold text-lg mb-3 ">info paket :</p>
           </CardDescription>
           <CardContent>
             <div className=" dark:text-white text-slate-900">

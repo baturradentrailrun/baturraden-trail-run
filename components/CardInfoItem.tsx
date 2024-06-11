@@ -26,7 +26,7 @@ const CardInfoItem = ({
     return date.toLocaleDateString("id-ID", options);
   };
   const bgColor =
-    index === 0 ? "bg-red-500" : index === 1 ? "bg-orange-500" : "bg-green-500";
+    index === 0 ? "bg-red-600" : index === 1 ? "bg-orange-600" : "bg-green-600";
   return (
     <div
       className={cn(

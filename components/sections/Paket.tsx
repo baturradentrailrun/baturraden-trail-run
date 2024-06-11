@@ -5,6 +5,7 @@ import CustomButton from "../CustomButton";
 import CardPaket from "../CardPaket";
 import { getPaket } from "@/sanity/fetch";
 import { CardPaketProps } from "@/types";
+import { LucideDownloadCloud } from "lucide-react";
 
 interface PaketProps {
   id: string;
@@ -72,12 +73,12 @@ const Paket: React.FC<PaketProps> = ({ id }) => {
             olahraga 🥰
           </p>
           <CustomButton
-            href="#"
-            variants={"instagram"}
+            href="https://drive.google.com/file/d/1YiiMzA73_tBLSTU082LTBnaaJ_0g4hcg/view?usp=sharing"
+            variants={"default"}
             roundedFull
-            className="w-full md:w-fit"
+            className="w-full flex items-center gap-3 md:w-fit"
           >
-            Unduh Manual <BsInstagram />
+            Unduh Manual <LucideDownloadCloud size={20} />
           </CustomButton>
         </div>
       </div>

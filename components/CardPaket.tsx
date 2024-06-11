@@ -25,9 +25,9 @@ const CardPaket: React.FC<CardPaketProps> = ({
   const textColor = isLeft ? "text-[#EA4335]" : "text-blue-500";
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg lg:w-[240px] overflow-hidden">
+    <div className="bg-white min-w-full lg:w-[240px] rounded-2xl shadow-lg overflow-hidden">
       <div
-        className="relative min-h-[262px] flex flex-col shadow-lg"
+        className="relative min-h-[262px] min-w-full flex flex-col shadow-lg"
         style={{ backgroundColor, boxShadow: `0 0 10px ${backgroundColor}` }}
       >
         <Image
@@ -39,7 +39,7 @@ const CardPaket: React.FC<CardPaketProps> = ({
           objectPosition="center"
           className="absolute -bottom-5 blur-xl z-0"
         />
-        <div className="z-10 text-center flex flex-col gap-5 justify-center items-center">
+        <div className="z-10 text-center flex w-full flex-col gap-5 justify-center items-center">
           <div
             className={cn(
               badgeVariants(),
@@ -56,7 +56,7 @@ const CardPaket: React.FC<CardPaketProps> = ({
         </div>
       </div>
 
-      <div className="p-5 flex flex-col items-center lg:items-start">
+      <div className="p-5 flex flex-col lg:items-start">
         <div className="flex gap-2 items-end">
           <p className={cn("font-bold capitalize", textColor)}>Hanya</p>
           <Image
@@ -70,7 +70,7 @@ const CardPaket: React.FC<CardPaketProps> = ({
         <p className="text-black font-bold text-lg mb-3">{formattedPrice}</p>
         <Link
           href={`/paket/${slug?.current}`}
-          className={buttonVariants({ variant: "outline", size: "sm" })}
+          className={buttonVariants({ variant: "outline" })}
         >
           More Detail
         </Link>

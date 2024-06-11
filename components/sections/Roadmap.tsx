@@ -14,10 +14,12 @@ const Roadmap = () => {
         alt="2024"
         className="absolute left-0 top-[-76px] hidden lg:block"
       />
-      <div className="padding-container py-20 text-white ">
+      <div className="padding-container py-20 text-white lg:w-5/12 w-full ">
         <h2 className="font-bold text-3xl mb-5 mt-10">Roadmap ⏰</h2>
-        <p className="w-9/12 mb-10">
-          Nantikan keseruan bareng kita dan jangan lupa catat tanggal asik kita.
+        <p className=" mb-10">
+          Tandai kalender Anda dan bergabunglah bersama kami dalam serangkaian
+          acara menarik sepanjang tahun 2024. Pastikan Anda tidak melewatkan
+          momen penting!
         </p>
       </div>
       <div className="relative">
@@ -28,7 +30,7 @@ const Roadmap = () => {
           alt="roadmap-map"
           className="absolute right-0 -top-10 lg:static z-0"
         />
-        <div className="lg:absolute relative pt-32 lg:bottom-10 z-10">
+        <div className="lg:absolute relative pt-32  lg:bottom-10 z-10">
           <CardInfoEvent />
         </div>
       </div>

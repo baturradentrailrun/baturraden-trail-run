@@ -1,6 +1,4 @@
 import React from "react";
-import { buttonVariants } from "../ui/button";
-import { cn } from "@/lib/utils";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
 
@@ -8,11 +6,6 @@ const Rute = () => {
   return (
     <div className="bg-slate-900 relative flex lg:justify-center flex-col lg:flex-row ">
       <div className="relative w-full min-h-[578px]">
-        <h1
-          className={cn(buttonVariants(), "rounded-full absolute top-5 left-5")}
-        >
-          Buka di map
-        </h1>
         <Image
           src={"/map1.png"}
           width={721}
@@ -38,11 +31,6 @@ const Rute = () => {
         </div>
       </div>
       <div className="relative w-full min-h-[578px]">
-        <h1
-          className={cn(buttonVariants(), "rounded-full absolute top-5 left-5")}
-        >
-          Buka di map
-        </h1>
         <Image
           src={"/map1.png"}
           width={721}
