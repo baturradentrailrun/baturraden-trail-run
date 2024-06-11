@@ -14,8 +14,11 @@ export default function Infolebihlanjut() {
       <div className="text-center flex items-center h-screen flex-col justify-center gap-3 padding-container">
         <Logo />
         <h3 className="text-2xl  font-black capitalize">
-          Informasi akan diberitahu lebih lanjut
+          Informasi lebih lanjut
         </h3>
+        <p className="text-slate-300">
+          Informasi akan diberitahu lebih lanjut di kemudian hari
+        </p>
       </div>
     </div>
   );
