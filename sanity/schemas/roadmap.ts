@@ -19,8 +19,8 @@ export const roadmap = defineType({
       initialValue: "registrasi",
       options: {
         list: [
-          { title: "Registrasi", value: "registrasi" },
-          { title: "Opening", value: "opening" },
+          { title: "Firtual Run", value: "firtual run" },
+          { title: "Opening Trail Run ", value: "opening trail run" },
           { title: "Baturraden Trail Run", value: "baturraden trail run" },
         ],
       },

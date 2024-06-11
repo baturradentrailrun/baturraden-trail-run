@@ -14,6 +14,7 @@ const Paket: React.FC<PaketProps> = ({ id }) => {
   const [paket, setPaket] = useState<CardPaketProps[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  console.log(paket);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,7 +48,7 @@ const Paket: React.FC<PaketProps> = ({ id }) => {
       id={id}
       className="bg-[#F2F2F2] padding-container flex lg:flex-row flex-col-reverse justify-between w-full py-10 gap-10 lg:gap-0"
     >
-      <div className="w-full flex flex-col lg:flex-row justify-start gap-5 items-center border-t-2 lg:border-t-0 lg:border-r-2 border-dashed border-r-slate-500 pt-10 lg:pt-0">
+      <div className="w-full flex flex-col lg:flex-row justify-start gap-5 items-center border-t-2 lg:border-t-0 lg:border-r-2 border-dashed border-r-slate-500 lg:pr-5 pt-10 lg:pt-0">
         {paket.map((p: CardPaketProps, index: number) => (
           <div key={index}>
             <CardPaket
@@ -55,6 +56,7 @@ const Paket: React.FC<PaketProps> = ({ id }) => {
               description={p.description}
               harga={p.harga}
               index={index}
+              slug={p.slug?.current ? { current: p.slug.current } : undefined}
             />
           </div>
         ))}

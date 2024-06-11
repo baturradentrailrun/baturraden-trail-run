@@ -3,12 +3,15 @@ import Image from "next/image";
 import React from "react";
 import { badgeVariants } from "./ui/badge";
 import { CardPaketProps } from "@/types";
+import Link from "next/link";
+import { buttonVariants } from "./ui/button";
 
 const CardPaket: React.FC<CardPaketProps> = ({
   name,
   description,
   harga,
   index,
+  slug,
 }) => {
   const formattedPrice = new Intl.NumberFormat("id-ID", {
     style: "currency",
@@ -24,7 +27,7 @@ const CardPaket: React.FC<CardPaketProps> = ({
   return (
     <div className="bg-white rounded-2xl shadow-lg lg:w-[240px] overflow-hidden">
       <div
-        className="relative h-[262px] flex flex-col shadow-lg"
+        className="relative min-h-[262px] flex flex-col shadow-lg"
         style={{ backgroundColor, boxShadow: `0 0 10px ${backgroundColor}` }}
       >
         <Image
@@ -52,7 +55,8 @@ const CardPaket: React.FC<CardPaketProps> = ({
           </p>
         </div>
       </div>
-      <div className="p-5 flex justify-center flex-col items-center lg:items-start">
+
+      <div className="p-5 flex flex-col items-center lg:items-start">
         <div className="flex gap-2 items-end">
           <p className={cn("font-bold capitalize", textColor)}>Hanya</p>
           <Image
@@ -63,7 +67,13 @@ const CardPaket: React.FC<CardPaketProps> = ({
             alt="arrow"
           />
         </div>
-        <p className="text-black font-bold text-xl">{formattedPrice}</p>
+        <p className="text-black font-bold text-lg mb-3">{formattedPrice}</p>
+        <Link
+          href={`/paket/${slug?.current}`}
+          className={buttonVariants({ variant: "outline", size: "sm" })}
+        >
+          More Detail
+        </Link>
       </div>
     </div>
   );

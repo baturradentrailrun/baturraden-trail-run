@@ -18,6 +18,9 @@ export type CardPaketProps = {
   description: string;
   harga: number;
   index?: number;
+  slug?: {
+    current: string;
+  };
 };
 // types/index.ts
 export interface Paket {
