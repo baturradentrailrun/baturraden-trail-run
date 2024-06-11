@@ -23,9 +23,9 @@ const CardInfoEvent = () => {
   }, []);
 
   const statusOrder: { [key: string]: number } = {
-    registration: 0,
-    opening: 1,
-    "baturraden trail run": 2,
+    "baturraden trail run": 0,
+    "virtual run": 1,
+    "trail run opening & Race": 2,
   };
 
   const sortedRoadmap = roadmap.sort((a, b) => {
