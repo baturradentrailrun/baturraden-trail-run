@@ -1,16 +1,17 @@
 import { groq } from "next-sanity";
 import { client } from "../lib/client";
 import { Paket } from "@/types";
+import { fetchData } from "./fetchData";
 
 async function getRoadmap() {
-  const query = groq`
-  *[_type == 'roadmap']{
-    description,
-      status,
-      duration
-  }
-`;
-  const data = await client.fetch(query);
+  const data = await fetchData({
+    query: `*[_type == 'roadmap']{
+        description,
+          status,
+          duration
+      }
+    `,
+  });
   return data;
 }
 
@@ -52,7 +53,8 @@ async function getPaket() {
 }
 
 async function getPaketBySlug(slug: string) {
-  const query = groq`
+  const data = fetchData({
+    query: `
     *[_type == "paket" && slug.current == $slug][0]{
       _id,
       name,
@@ -61,9 +63,23 @@ async function getPaketBySlug(slug: string) {
       slug,
       blockContent
     }
-  `;
-  const data = await client.fetch(query, { slug });
+  `,
+    slug,
+  });
+
   return data;
 }
-
-export { getSponsorship, getRoadmap, getSocialMedia, getPaket, getPaketBySlug };
+async function getPeraturan() {
+  const data = fetchData({
+    query: ` *[_type == 'peraturan']`,
+  });
+  return data;
+}
+export {
+  getSponsorship,
+  getRoadmap,
+  getSocialMedia,
+  getPaket,
+  getPaketBySlug,
+  getPeraturan,
+};

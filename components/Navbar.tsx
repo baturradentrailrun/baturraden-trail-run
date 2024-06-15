@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
                 key={index}
                 className="text-sm  transition duration-200 ease-in-out hover:font-medium dark:text-white"
               >
-                <Link href={item.path} className="normal-case">
+                <Link href={item.path} className="capitalize">
                   {item.label}
                 </Link>
               </li>

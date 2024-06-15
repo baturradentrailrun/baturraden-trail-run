@@ -1,12 +1,8 @@
-"use client";
-import { Suspense, useState, useEffect } from "react";
 import { PortableTextBlock } from "next-sanity";
-import { useRouter, notFound } from "next/navigation";
-import { Paket } from "@/types";
+
 import { getPaketBySlug } from "@/sanity/fetch";
 import CustomPortableText from "@/components/PortableTextComponent";
-import { buttonVariants } from "@/components/ui/button";
-import { BadgePercent, ChevronLeft } from "lucide-react";
+import { BadgePercent } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -22,60 +18,16 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-// import { Metadata, ResolvingMetadata } from "next";
+
 interface PaketPageProps {
   params: {
     slug: string;
   };
 }
-
-export default function PaketPage({ params }: PaketPageProps) {
-  const router = useRouter();
+export const revalidate = 100;
+export default async function PaketPage({ params }: PaketPageProps) {
   const { slug } = params;
-  const [paket, setPaket] = useState<Paket | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      setError(null);
-
-      try {
-        const data = await getPaketBySlug(slug);
-        if (!data) {
-          return notFound();
-        }
-        setPaket(data);
-      } catch (err) {
-        setError("Error loading paket");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [slug]);
-
-  if (loading) {
-    return (
-      <div className="text-center p-10">
-        <div className="animate-pulse">
-          <div className="h-6 bg-gray-300 rounded mb-4"></div>
-          <div className="h-6 bg-gray-300 rounded mb-4"></div>
-          <div className="h-6 bg-gray-300 rounded mb-4"></div>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return <div className="text-center py-10">{error}</div>;
-  }
-
-  if (!paket) {
-    return <div className="text-center py-10">Paket tidak ditemukan</div>;
-  }
+  const paket = await getPaketBySlug(slug);
 
   const { name, harga, description, blockContent } = paket;
   const formattedPrice = new Intl.NumberFormat("id-ID", {
@@ -90,9 +42,7 @@ export default function PaketPage({ params }: PaketPageProps) {
         <Breadcrumb className="padding-container">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink onClick={() => router.back()}>
-                Beranda
-              </BreadcrumbLink>
+              <BreadcrumbLink href="/">Beranda</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>

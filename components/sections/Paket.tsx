@@ -1,6 +1,3 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { BsInstagram } from "react-icons/bs";
 import CustomButton from "../CustomButton";
 import CardPaket from "../CardPaket";
 import { getPaket } from "@/sanity/fetch";
@@ -10,38 +7,9 @@ import { LucideDownloadCloud } from "lucide-react";
 interface PaketProps {
   id: string;
 }
-
-const Paket: React.FC<PaketProps> = ({ id }) => {
-  const [paket, setPaket] = useState<CardPaketProps[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      setError(null);
-
-      try {
-        const data = await getPaket();
-        data.sort((a: CardPaketProps, b: CardPaketProps) => a.harga - b.harga);
-        setPaket(data);
-      } catch (err) {
-        setError("Error loading paket");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return <div className="text-center py-10">Loading...</div>;
-  }
-
-  if (error) {
-    return <div className="text-center py-10">{error}</div>;
-  }
+export const revalidate = 100;
+const Paket: React.FC<PaketProps> = async ({ id }) => {
+  const paket = await getPaket();
 
   return (
     <div

@@ -4,5 +4,6 @@ import { roadmap } from "./roadmap";
 import { contact } from "./contact";
 import { paket } from "./paket";
 import { faq } from "./faq";
+import { peraturan } from "./peraturan";
 
-export { categories, sponsorship, roadmap, contact, paket, faq };
+export { categories, sponsorship, roadmap, contact, paket, faq, peraturan };

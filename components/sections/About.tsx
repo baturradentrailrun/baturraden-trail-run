@@ -14,7 +14,7 @@ const About = ({ id }: { id: string }) => {
         <p className="md:w-10/12 mb-10 ">
           Baturraden Trail Run merupakan salah satu bagian dari event Baturraden
           Festival 2024 diselenggarakan oleh DINPORABUDPAR Kabupaten Banyumas
-          yang bekerja sama dengan Amikom Creative Hub. dan Yoayo.asia.
+          yang bekerja sama dengan Amikom Creative Hub, dan Yoayo asia.
           Bertujuan untuk mempromosikan keindahan alam, warisan budaya, kuliner,
           dan destinasi wisata yang ada di Banyumas. Baturaden Trail Run
           terdapat dua event tersendiri yaitu Virtual Run di mana Peserta dapat
