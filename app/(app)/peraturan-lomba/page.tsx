@@ -19,7 +19,7 @@ const PeraturanLomba = async () => {
   return (
     <div>
       <div>
-        <Breadcrumb className="padding-container mb-5">
+        <Breadcrumb className="padding-container py-5 mb-5">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink href="/">Beranda</BreadcrumbLink>
