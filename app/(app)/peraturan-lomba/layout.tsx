@@ -1,7 +1,6 @@
 import Logo from "@/components/Logo";
 import { ModeToggle } from "@/components/ModeToggle";
 import Footer from "@/components/sections/Footer";
-
 import type { Metadata, ResolvingMetadata } from "next";
 
 export async function generateMetadata(
@@ -11,7 +10,7 @@ export async function generateMetadata(
 
   return {
     title: "Peraturan Perlombaan",
-    description: "Baca dan cermati baik - baik peraturan perlombaan!",
+    description: "Baca dan cermati baik-baik peraturan perlombaan!",
     openGraph: {
       images: previousImages,
     },
@@ -29,7 +28,6 @@ export default function PaketLayout({
         <Logo />
         <ModeToggle />
       </nav>
-
       {children}
       <Footer id="kontak" />
     </main>
