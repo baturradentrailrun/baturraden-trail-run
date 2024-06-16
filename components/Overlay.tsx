@@ -13,7 +13,7 @@ const Overlay: React.FC<OverlayProps> = ({ closeMenu }) => {
       animate="enter"
       exit="exit"
       initial="initial"
-      className="fixed inset-0 bg-slate-800 min-h-screen backdrop-blur-md bg-opacity-10 "
+      className=" bg-slate-800 min-h-screen h-full backdrop-blur-md bg-opacity-10 "
       onClick={closeMenu}
     ></motion.div>
   );

@@ -7,7 +7,7 @@ const About = ({ id }: { id: string }) => {
   return (
     <div
       id={id}
-      className="flex justify-between overflow-hidden flex-col md:flex-row relative "
+      className="flex justify-between overflow-hidden flex-col md:flex-row relative  "
     >
       <div className="py-10 padding-container w-full padding-container  ">
         <h2 className="text-3xl font-bold my-5 ">Ayo Mlayu!</h2>

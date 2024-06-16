@@ -4,13 +4,13 @@ import CustomButton from "../CustomButton";
 
 export default function Infolebihlanjut() {
   return (
-    <div className="h-[600px] relative w-full flex justify-center items-center overflow-hidden bg-slate-900">
+    <div className="h-[600px] relative w-full flex justify-center items-center overflow-hidden ">
       <Image
         src={"/pattern-light.svg"}
         width={1440}
         height={500}
         alt="background"
-        className="absolute  lg:max-h-screen object-cover dark:invert object-center z-0  "
+        className="absolute  lg:max-h-screen h-full object-cover dark:invert object-center z-0  "
       />
       <div className="text-center flex z-10 items-center h-screen flex-col justify-center gap-3 padding-container">
         <Logo />

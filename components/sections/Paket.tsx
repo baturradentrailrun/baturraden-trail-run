@@ -14,7 +14,7 @@ const Paket: React.FC<PaketProps> = async ({ id }) => {
   return (
     <div
       id={id}
-      className="bg-[#F2F2F2] padding-container flex lg:flex-row flex-col-reverse justify-between w-full py-10 gap-10 lg:gap-0"
+      className="bg-[#F2F2F2] min-h-screen padding-container flex lg:flex-row flex-col-reverse items-center justify-between w-full py-10 gap-10 lg:gap-0"
     >
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full">
         {paket.map((p: CardPaketProps, index: number) => (

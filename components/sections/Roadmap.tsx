@@ -1,8 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import CardInfoEvent from "../CardInfoEvent";
-import { BsWhatsapp } from "react-icons/bs";
-import CustomButton from "../CustomButton";
 
 const Roadmap = () => {
   return (
