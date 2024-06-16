@@ -11,8 +11,8 @@ const CardInfoEvent = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      const data = await getRoadmap();
       try {
-        const data = await getRoadmap();
         setRoadmap(data);
       } catch (error) {
         console.error("Error fetching roadmap:", error);

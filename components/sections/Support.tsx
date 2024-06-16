@@ -1,32 +1,10 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
 import CarouselLogo from "../CarouselLogo";
 import { getSponsorship } from "@/sanity/fetch";
 import { CarouselImageProps } from "@/types";
 
-const Support = () => {
-  const [sponsorship, setSponsorship] = useState<CarouselImageProps[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getSponsorship();
-        setSponsorship(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching sponsorship:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+export const revalidate = 100;
+const Support = async () => {
+  const sponsorship: CarouselImageProps[] = await getSponsorship();
 
   return (
     <div className="bg-slate-950 text-white padding-container py-10">

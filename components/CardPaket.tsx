@@ -70,7 +70,7 @@ const CardPaket: React.FC<CardPaketProps> = ({
         <p className="text-black font-bold text-lg mb-3">{formattedPrice}</p>
         <Link
           href={`/paket/${slug?.current}`}
-          className={buttonVariants({ variant: "outline" })}
+          className={cn(buttonVariants({ variant: "outline" }), "w-full")}
         >
           More Detail
         </Link>
