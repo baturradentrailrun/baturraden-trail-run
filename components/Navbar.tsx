@@ -58,14 +58,17 @@ const Navbar: React.FC = () => {
             ))}
           </ul>
           <div className="flex items-center gap-5 lg:hidden">
-            <div
-              className={`z-40 rounded-full text-blue-700 ${
-                isOpen
-                  ? "text-white transition-all duration-200 ease-in-out"
-                  : "text-white transition-all delay-300"
-              }`}
-            >
-              <Hamburger size={20} toggled={isOpen} toggle={setOpen} />
+            <div className="flex items-center gap-3">
+              <ModeToggle />
+              <div
+                className={`z-40 rounded-full text-blue-700 ${
+                  isOpen
+                    ? "text-white transition-all duration-200 ease-in-out"
+                    : "text-white transition-all delay-300"
+                }`}
+              >
+                <Hamburger size={20} toggled={isOpen} toggle={setOpen} />
+              </div>
             </div>
           </div>
         </div>
