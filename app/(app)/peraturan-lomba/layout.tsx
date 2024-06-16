@@ -1,17 +1,17 @@
 import Logo from "@/components/Logo";
 import { ModeToggle } from "@/components/ModeToggle";
 import Footer from "@/components/sections/Footer";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 
-export async function generateMetadata(
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const previousImages = (await parent).openGraph?.images || [];
+export async function generateMetadata(parent: Metadata): Promise<Metadata> {
+  const previousImages = parent.openGraph?.images || [];
 
   return {
     title: "Peraturan Perlombaan",
     description: "Baca dan cermati baik-baik peraturan perlombaan!",
     openGraph: {
+      title: "Peraturan Perlombaan",
+      description: "Baca dan cermati baik-baik peraturan perlombaan!",
       images: previousImages,
     },
   };
