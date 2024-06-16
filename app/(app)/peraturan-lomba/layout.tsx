@@ -3,19 +3,17 @@ import { ModeToggle } from "@/components/ModeToggle";
 import Footer from "@/components/sections/Footer";
 import type { Metadata } from "next";
 
-export async function generateMetadata(parent: Metadata): Promise<Metadata> {
-  const previousImages = parent.openGraph?.images || [];
-
-  return {
+export const metadata: Metadata = {
+  title: "Peraturan Perlombaan",
+  description: "Baca dan cermati baik-baik peraturan perlombaan!",
+  keywords: ["peraturan", "perlombaan", "baturraden"],
+  applicationName: "Baturaden Trail Run",
+  metadataBase: new URL("https://baturradentrailrun.com"),
+  openGraph: {
     title: "Peraturan Perlombaan",
     description: "Baca dan cermati baik-baik peraturan perlombaan!",
-    openGraph: {
-      title: "Peraturan Perlombaan",
-      description: "Baca dan cermati baik-baik peraturan perlombaan!",
-      images: previousImages,
-    },
-  };
-}
+  },
+};
 
 export default function PaketLayout({
   children,

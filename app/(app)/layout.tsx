@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   keywords: ["trail run", "baturraden", "festival"],
   applicationName: "Baturaden Trail Run",
   metadataBase: new URL("https://baturradentrailrun.com"),
-  icons: ["/icon.ico"],
+
   openGraph: {
     title: "Baturraden Trail Run",
     description: "Wujudkan generasi sehat bersama Baturaden Trail Run",
