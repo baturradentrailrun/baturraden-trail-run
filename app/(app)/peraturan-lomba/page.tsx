@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/breadcrumb";
 import { getPeraturan } from "@/sanity/fetch";
 import { PortableTextBlock } from "next-sanity";
-import Link from "next/link";
 
 import React from "react";
 
