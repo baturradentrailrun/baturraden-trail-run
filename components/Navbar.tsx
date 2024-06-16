@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
             {NAVBAR.map((item, index) => (
               <li
                 key={index}
-                className="text-sm  transition duration-200 ease-in-out hover:font-medium dark:text-white"
+                className="text-sm  transition duration-200 ease-in-out hover:font-medium text-white"
               >
                 <Link href={item.path} className="capitalize">
                   {item.label}

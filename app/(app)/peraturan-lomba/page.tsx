@@ -1,5 +1,3 @@
-import Logo from "@/components/Logo";
-import { ModeToggle } from "@/components/ModeToggle";
 import CustomPortableText from "@/components/PortableTextComponent";
 import {
   Breadcrumb,
@@ -20,10 +18,6 @@ const PeraturanLomba = async () => {
 
   return (
     <div>
-      <nav className="w-full flex justify-between items-center padding-container py-2 border-b mb-5 shadow-lg">
-        <Logo />
-        <ModeToggle />
-      </nav>
       <div>
         <Breadcrumb className="padding-container mb-5">
           <BreadcrumbList>

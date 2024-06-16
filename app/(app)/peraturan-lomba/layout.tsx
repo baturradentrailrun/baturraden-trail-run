@@ -1,28 +1,17 @@
 import Logo from "@/components/Logo";
 import { ModeToggle } from "@/components/ModeToggle";
 import Footer from "@/components/sections/Footer";
-import { getPaketBySlug } from "@/sanity/fetch";
+
 import type { Metadata, ResolvingMetadata } from "next";
 
-interface PaketPageProps {
-  params: {
-    slug: string;
-  };
-}
-
 export async function generateMetadata(
-  { params }: PaketPageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { slug } = params;
-  const paket = await getPaketBySlug(slug);
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: paket?.name || "Baturaden Trail Run",
-    description:
-      paket?.description ||
-      "Wujudkan generasi sehat bersama Baturaden Trail Run",
+    title: "Peraturan Perlombaan",
+    description: "Baca dan cermati baik - baik peraturan perlombaan!",
     openGraph: {
       images: previousImages,
     },
@@ -31,10 +20,8 @@ export async function generateMetadata(
 
 export default function PaketLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: any;
 }>) {
   return (
     <main>
