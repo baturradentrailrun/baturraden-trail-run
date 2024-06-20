@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import CustomButton from "../CustomButton";
+import { AboutDrawer } from "../AboutDrawer";
 
 const About = ({ id }: { id: string }) => {
   return (
@@ -17,19 +18,9 @@ const About = ({ id }: { id: string }) => {
           yang bekerja sama dengan Amikom Creative Hub. dan Yoayo.asia.
           Bertujuan untuk mempromosikan keindahan alam, warisan budaya, kuliner,
           dan destinasi wisata yang ada di Banyumas. Baturaden Trail Run
-          terdapat dua event tersendiri yaitu Virtual Run di mana Peserta dapat
-          berlari dari mana saja menggunakan GPS tracker yang telah
-          tersinkronisasi dengan aplikasi Yoayo. Virtual Run merupakan acara
-          sebelum Baturraden Trail Run (Road to Baturraden Trail Run) dan dapat
-          diikuti oleh Sobat Runners di seluruh Indonesia. Sobat Runners yang
-          mengikuti Virtual Run akan mendapatkan Finisher Award dan kesempatan
-          mendapatkan Lucky Draw free slot 7 KM dan 21 KM Baturraden Trail Run.
-          Acara puncak Baturraden Trail Run Offline Race di mana Peserta berlari
-          secara bersamaan di Kawasan Baturraden, Kab. Banyumas. Baturraden
-          Trail Run menjadi kesempatan yang sempurna bagi pelari dari semua
-          tingkatan untuk merasakan tantangan. Mari berlari menyusuri keindahan
-          alam Baturraden.
+          terdapat dua event tersendiri yaitu...
         </p>
+        <AboutDrawer />
       </div>
       <div className="md:w-10/12 bg-[#003E9C] relative h-[380px] lg:h-[500px] md:h-auto flex flex-col justify-between p-4 pb-20 order-first md:order-last overflow-hidden md:overflow-visible">
         <Image
