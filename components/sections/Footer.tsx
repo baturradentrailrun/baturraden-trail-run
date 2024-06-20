@@ -42,41 +42,45 @@ async function Footer({ id }: { id: string }) {
         <div className="border-t md:border-l border-slate-200 border-dashed mx-12 md:my-0 my-8"></div>
 
         <div className="flex flex-col flex-1 text-center md:text-left justify-between">
-          <div>
+          <div className="mb-5">
             <h2 className="text-md">Untuk info lebih lanjut hubungi</h2>
-            <div className="flex items-center w-full mt-5">
+            <div className="flex flex-col lg:flex-row items-center w-full mt-5">
               <Mail className="w-16 md:w-9" />
               <p className="md:ml-2 text-sm text-left">
-                <b>baturradenfestival@gmail.com</b> atau kunjungi sosial media
-                kami.
+                <b>baturradenfestival@gmail.com</b>
+              </p>
+              <p className="text-sm ml-0 lg:ml-3">
+                Atau kunjungi sosial media kami.
               </p>
             </div>
           </div>
 
-          <div className="flex gap-5 py-4 justify-center md:justify-start">
-            {data.map((social: any) => {
-              const iconName = social.name.toLowerCase();
-              const IconComponent =
-                iconComponents[social.name as keyof typeof iconComponents];
+          <div className=" rounded-full mx-auto mb-5 lg:mx-0 p-2 bg-white bg-opacity-15 backdrop-blur-sm border-l border-t border-slate-300 w-fit">
+            <div className="flex gap-5  justify-center md:justify-start">
+              {data.map((social: any) => {
+                const iconName = social.name.toLowerCase();
+                const IconComponent =
+                  iconComponents[social.name as keyof typeof iconComponents];
 
-              if (!IconComponent) {
-                console.error(`Icon component for ${iconName} not found`);
-                return null;
-              }
+                if (!IconComponent) {
+                  console.error(`Icon component for ${iconName} not found`);
+                  return null;
+                }
 
-              return (
-                <Link
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  className="bg-[#C310C6] p-3 rounded-full flex items-center justify-center"
-                >
-                  <IconComponent className="text-xl md:text-xl" />
-                </Link>
-              );
-            })}
+                return (
+                  <Link
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    className="bg-[#C310C6] p-2 rounded-full flex items-center justify-center"
+                  >
+                    <IconComponent className="text-xl md:text-xl" />
+                  </Link>
+                );
+              })}
+            </div>
           </div>
-          <p className="opacity-50">
+          <p className="opacity-50 text-sm">
             All Rights reserved @baturradentrailrun Community 2024
           </p>
         </div>
