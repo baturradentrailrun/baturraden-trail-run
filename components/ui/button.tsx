@@ -23,6 +23,7 @@ const buttonVariants = cva(
         instagram:
           "bg-[#E1306C]  text-white hover:bg-[#E1306C] flex items-center justify-center gap-2 ",
         blue: "bg-[#003E9C] text-white hover:bg-blue-600",
+        kontak: "bg-yellow-500  hover:bg-yellow-600",
       },
       size: {
         default: "h-10 px-4 py-2",

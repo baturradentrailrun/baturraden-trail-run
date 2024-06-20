@@ -2,9 +2,12 @@ import Image from "next/image";
 import Logo from "../Logo";
 import CustomButton from "../CustomButton";
 
-export default function Infolebihlanjut() {
+export default function PeraturanLomba({ id }: { id: string }) {
   return (
-    <div className="h-[600px] relative w-full flex justify-center items-center overflow-hidden ">
+    <section
+      id={id}
+      className="h-[600px] relative w-full flex justify-center items-center overflow-hidden "
+    >
       <Image
         src={"/pattern-light.svg"}
         width={1440}
@@ -30,6 +33,6 @@ export default function Infolebihlanjut() {
           Peraturan perlombaan
         </CustomButton>
       </div>
-    </div>
+    </section>
   );
 }

@@ -2,9 +2,12 @@ import Image from "next/image";
 import React from "react";
 import CardInfoEvent from "../CardInfoEvent";
 
-const Roadmap = () => {
+const Roadmap = ({ id }: { id: string }) => {
   return (
-    <div className="relative bg-gradient-to-r from-[#004FC7] to-[#013E9C] flex flex-col lg:flex-row justify-between min-h-[463px]">
+    <section
+      id={id}
+      className="relative bg-gradient-to-r from-[#004FC7] to-[#013E9C] flex flex-col lg:flex-row justify-between min-h-[463px]"
+    >
       <Image
         src={"/2024.png"}
         width={596}
@@ -32,7 +35,7 @@ const Roadmap = () => {
           <CardInfoEvent />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

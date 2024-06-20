@@ -10,9 +10,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { AlignJustify } from "lucide-react";
+import { AlignJustify, Phone } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import CustomButton from "./CustomButton";
 
 export function Sidebar({
   className,
@@ -40,6 +41,15 @@ export function Sidebar({
                 <Link href={nav.path}>{nav.label}</Link>
               </li>
             ))}
+            <CustomButton
+              href="#kontak"
+              variants={"kontak"}
+              roundedFull
+              className="flex w-full justify-center gap-3 items-center hover:text-destructive-foreground"
+            >
+              <Phone size={17} />
+              Kontak
+            </CustomButton>
           </div>
           <SheetFooter className="text-sm mt-32 text-slate-500">
             copyright 2024 baturaden fest

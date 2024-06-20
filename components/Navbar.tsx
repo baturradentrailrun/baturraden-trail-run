@@ -14,6 +14,8 @@ import MobileNav from "./MobileNav";
 import { ModeToggle } from "./ModeToggle";
 import Logo from "./Logo";
 import Overlay from "./Overlay";
+import CustomButton from "./CustomButton";
+import { Phone } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setOpen] = useState(false);
@@ -49,13 +51,22 @@ const Navbar: React.FC = () => {
             {NAVBAR.map((item, index) => (
               <li
                 key={index}
-                className="text-sm  transition duration-200 ease-in-out hover:font-medium text-white"
+                className="text-sm  transition duration-200 ease-in-out hover:font-medium e"
               >
                 <Link href={item.path} className="capitalize">
                   {item.label}
                 </Link>
               </li>
             ))}
+            <CustomButton
+              href="#kontak"
+              variants={"kontak"}
+              roundedFull
+              className="flex justify-center gap-3 items-center hover:text-destructive-foreground"
+            >
+              <Phone size={17} />
+              Kontak
+            </CustomButton>
           </ul>
           <div className="flex items-center gap-5 lg:hidden">
             <div className="flex items-center gap-3">

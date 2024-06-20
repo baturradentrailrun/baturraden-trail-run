@@ -1,6 +1,4 @@
 import * as React from "react";
-// import { MinusIcon, PlusIcon } from ""
-// import { Bar, BarChart, ResponsiveContainer } from "recharts"
 
 import { Button } from "@/components/ui/button";
 import {
@@ -18,7 +16,7 @@ export function AboutDrawer() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button>Lebih banyak</Button>
+        <Button className="rounded-full">Lebih banyak</Button>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full ">
@@ -29,7 +27,7 @@ export function AboutDrawer() {
             </DrawerDescription>
           </DrawerHeader>
           <div className="p-4 pb-0">
-            <div className="mt-3 mb-10">
+            <div className="mt-3 mb-10 text-justify border-t pt-10">
               Baturraden Trail Run merupakan salah satu bagian dari event
               Baturraden Festival 2024 diselenggarakan oleh DINPORABUDPAR
               Kabupaten Banyumas yang bekerja sama dengan Amikom Creative Hub.
@@ -52,7 +50,7 @@ export function AboutDrawer() {
           </div>
           <DrawerFooter>
             <DrawerClose asChild>
-              <Button>Tutup</Button>
+              <Button className="mb-5">Tutup</Button>
             </DrawerClose>
           </DrawerFooter>
         </div>

@@ -4,42 +4,28 @@ export const NAVBAR = [
     path: "/",
   },
   {
-    label: "Informasi event",
-    path: "/#informasi-event",
+    label: "About",
+    path: "/#about",
   },
   {
-    label: "kategori event",
-    path: "/#kategori-event",
+    label: "Roadmap",
+    path: "/#roadmap",
   },
   {
-    label: "download app",
-    path: "/#download-app",
+    label: "Peraturan Lomba",
+    path: "/#peraturan-lomba",
   },
-  // {
-  //   label: "galeri",
-  //   path: "/#galeri",
-  // },
-  {
-    label: "kontak",
-    path: "/#kontak",
-  },
-];
 
-export const imageSupport = [
   {
-    image: "/support1.png",
-    alt: "support-1",
+    label: "Paket",
+    path: "/#paket",
   },
   {
-    image: "/support2.png",
-    alt: "support-1",
+    label: "Tutorial",
+    path: "/#tutorial",
   },
   {
-    image: "/support3.png",
-    alt: "support-1",
-  },
-  {
-    image: "/support4.png",
-    alt: "support-1",
+    label: "Download Aplikasi",
+    path: "/#download-app",
   },
 ];
