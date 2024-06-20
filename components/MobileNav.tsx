@@ -34,7 +34,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ closeMenu }) => {
             exit="exit"
             initial="initial"
             key={index}
-            className="text-xl font-bold text-white transition duration-200 ease-in-out hover:font-medium dark:text-white dark:hover:text-blue-700"
+            className="text-xl font-bold text-white transition duration-200 ease-in-out hover:font-medium dark:text-white dark:hover:text-slate-100"
           >
             <Link
               href={item.path}

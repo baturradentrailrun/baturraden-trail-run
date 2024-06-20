@@ -1,10 +1,11 @@
 import { londrina, plusJakartaSans } from "@/app/fonts";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-
 import React from "react";
 import HeroBackround from "../HeroBackround";
-import Link from "next/link";
+import CustomButton from "../CustomButton";
+import { SiAppstore } from "react-icons/si";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { Badge } from "../ui/badge";
 
 const Hero = ({ id }: { id: string }) => {
   return (
@@ -26,51 +27,42 @@ const Hero = ({ id }: { id: string }) => {
             </p>
             <h1 className="text-8xl">Trail Run</h1>
             <div className="w-full">
-              <p className={cn(plusJakartaSans.className, "lowercase text-xs")}>
+              <Badge
+                className={cn(
+                  plusJakartaSans.className,
+                  "lowercase text-xs",
+                  "bg-pink-500 text-white "
+                )}
+              >
                 part of
-              </p>
+              </Badge>
               <p>baturraden</p>
               <p className="text-3xl text-[#97DE00]">festival</p>
-              <p className={cn(plusJakartaSans.className, "text-sm mt-5")}>
+              <p
+                className={cn(
+                  plusJakartaSans.className,
+                  "text-sm mt-32 lg:mt-10 font-semibold"
+                )}
+              >
                 Registrasi melalui aplikasi :
               </p>
-              <div className="flex gap-2 text-white mt-5">
-                <Link
-                  href={
-                    "https://play.google.com/store/apps/details?id=asia.yoayo.yoayo&pcampaignid=web_share"
-                  }
-                  target="_blank"
-                  className="flex gap-2  bg-black px-5 py-2 rounded-xl border-4 border-slate-600"
+              <div className="flex gap-2 flex-col md:flex-row  text-white mt-5 justify-center">
+                <CustomButton
+                  className="rounded-full flex gap-4 items-center"
+                  _blank
+                  href="https://play.google.com/store/apps/details?id=asia.yoayo.yoayo&pcampaignid=web_share"
                 >
-                  <Image
-                    src={"playstore.svg"}
-                    width={20}
-                    height={20}
-                    alt="playstore"
-                  />
-                  <div>
-                    <p className="text-sm">GET IT ON</p>
-                    <p className="font-bold">Google Play</p>
-                  </div>
-                </Link>
-                <Link
-                  href={
-                    "https://apps.apple.com/us/app/yoayo-active-community/id1481334742"
-                  }
-                  target="_blank"
-                  className="flex gap-4 text-white bg-black px-5 py-2 rounded-xl border-4 border-slate-600"
+                  <IoLogoGooglePlaystore size={20} />
+                  Playstore
+                </CustomButton>
+                <CustomButton
+                  className="rounded-full flex gap-4 items-center"
+                  _blank
+                  href="https://apps.apple.com/us/app/yoayo-active-community/id1481334742"
                 >
-                  <Image
-                    src={"appstore.svg"}
-                    width={20}
-                    height={20}
-                    alt="appstore"
-                  />
-                  <div>
-                    <p className="text-sm">GET IT ON</p>
-                    <p className="font-bold">App Store</p>
-                  </div>
-                </Link>
+                  <SiAppstore size={20} />
+                  AppStore
+                </CustomButton>
               </div>
             </div>
           </div>
