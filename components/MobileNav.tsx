@@ -5,6 +5,8 @@ import { menuSlide, slide } from "@/constant/anim";
 import { NAVBAR } from "@/constant";
 import Link from "next/link";
 import Curve from "./Curve";
+import CustomButton from "./CustomButton";
+import { Phone } from "lucide-react";
 
 interface MobileNavProps {
   closeMenu: () => void;
@@ -43,6 +45,15 @@ const MobileNav: React.FC<MobileNavProps> = ({ closeMenu }) => {
             </Link>
           </motion.div>
         ))}
+        <CustomButton
+          href="#kontak"
+          variants={"kontak"}
+          roundedFull
+          className="flex w-full justify-center gap-3 items-center hover:text-destructive-foreground"
+        >
+          <Phone size={17} />
+          Kontak
+        </CustomButton>
       </motion.div>
     </>
   );
