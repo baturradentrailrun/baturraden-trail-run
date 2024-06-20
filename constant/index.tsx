@@ -12,6 +12,10 @@ export const NAVBAR = [
     path: "/#roadmap",
   },
   {
+    label: "Rute",
+    path: "/#rute",
+  },
+  {
     label: "Peraturan Lomba",
     path: "/#peraturan-lomba",
   },

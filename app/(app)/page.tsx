@@ -8,6 +8,7 @@ import DownloadApp from "@/components/sections/DownloadApp";
 import Navbar from "@/components/Navbar";
 import PeraturanLomba from "@/components/sections/PeraturanLomba";
 import Tutorial from "@/components/sections/Tutorial";
+import Rute from "@/components/sections/Rute";
 
 export default async function Home() {
   return (
@@ -17,7 +18,7 @@ export default async function Home() {
       <Support />
       <About id="about" />
       <Roadmap id="roadmap" />
-      {/* <Rute /> */}
+      <Rute id="rute" />
       <PeraturanLomba id="peraturan-lomba" />
       <Paket id="paket" />
 
