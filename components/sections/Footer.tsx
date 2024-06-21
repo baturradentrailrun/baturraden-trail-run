@@ -54,7 +54,6 @@ async function Footer({ id }: { id: string }) {
               </p>
             </div>
           </div>
-
           <div className=" rounded-full mx-auto mb-5 lg:mx-0 p-2 bg-white bg-opacity-15 backdrop-blur-sm border-l border-t border-slate-300 w-fit">
             <div className="flex gap-5  justify-center md:justify-start">
               {data.map((social: any) => {
