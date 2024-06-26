@@ -33,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <GoogleTagManager gtmId={`${process.env.NEXT_PUBLIC_MEASUREMENT_ID}`} />
+      <GoogleTagManager
+        gtmId={`${process.env.NEXT_PUBLIC_GOOGLETAGMANAGER_ID}`}
+      />
       <body
         className={cn(plusJakartaSans.className, "scroll-smooth")}
         suppressHydrationWarning
