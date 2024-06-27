@@ -14,7 +14,6 @@ export const revalidate = 10;
 
 const Peserta = async () => {
   const dataPeserta = await getPeserta();
-  console.log(dataPeserta);
 
   return (
     <div>
