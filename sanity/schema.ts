@@ -1,14 +1,14 @@
 import { type SchemaTypeDefinition } from "sanity";
 import {
-  categories,
   roadmap,
   sponsorship,
   contact,
   paket,
   faq,
   peraturan,
+  peserta,
 } from "./schemas";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [categories, sponsorship, roadmap, contact, paket, faq, peraturan],
+  types: [peserta, sponsorship, roadmap, contact, paket, faq, peraturan],
 };

@@ -77,7 +77,21 @@ async function getPeraturan() {
   });
   return data;
 }
+
+async function getPeserta() {
+  const data = fetchData({
+    query: `
+    *[_type == "peserta"]{
+      "id": _id,
+        name,
+        event
+    }
+    `,
+  });
+  return data;
+}
 export {
+  getPeserta,
   getSponsorship,
   getRoadmap,
   getSocialMedia,

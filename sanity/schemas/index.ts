@@ -1,9 +1,9 @@
-import { categories } from "./categories";
 import { sponsorship } from "./sponsorship";
 import { roadmap } from "./roadmap";
 import { contact } from "./contact";
 import { paket } from "./paket";
 import { faq } from "./faq";
 import { peraturan } from "./peraturan";
+import { peserta } from "./peserta";
 
-export { categories, sponsorship, roadmap, contact, paket, faq, peraturan };
+export { sponsorship, roadmap, contact, paket, faq, peraturan, peserta };

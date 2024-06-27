@@ -51,3 +51,9 @@ export interface ImageContent {
   };
   alt: string;
 }
+
+export interface PesertaProps {
+  id: string;
+  name: string;
+  event: string;
+}
