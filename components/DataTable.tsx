@@ -64,7 +64,9 @@ export const columns: ColumnDef<PesertaProps>[] = [
     header: "Event",
     cell: ({ row }) => (
       <div className="capitalize">
-        <Badge variant={"outline"}>{row.getValue("event")}</Badge>
+        <Badge variant={"outline"} className="text-center">
+          {row.getValue("event")}
+        </Badge>
       </div>
     ),
   },
@@ -103,7 +105,7 @@ export function DataTable({ data }: DataTableProps) {
 
   return (
     <div className="w-full">
-      <div className="flex items-center py-4">
+      <div className="flex justify-between gap-2 items-center py-4">
         <Input
           placeholder="Cari nama kamu..."
           value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
@@ -114,11 +116,7 @@ export function DataTable({ data }: DataTableProps) {
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              size={"sm"}
-              className="ml-auto flex justify-center items-center gap-4"
-            >
+            <Button variant="outline">
               <Settings2 size={20} /> Filter
             </Button>
           </DropdownMenuTrigger>
