@@ -32,6 +32,9 @@ export default function PeraturanLomba({ id }: { id: string }) {
         >
           Peraturan perlombaan
         </CustomButton>
+        <CustomButton roundedFull href="/peserta">
+          Daftar peserta
+        </CustomButton>
       </div>
     </section>
   );

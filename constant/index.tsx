@@ -25,6 +25,10 @@ export const NAVBAR = [
     path: "/#paket",
   },
   {
+    label: "Daftar Peserta",
+    path: "/peserta",
+  },
+  {
     label: "Tutorial",
     path: "/#tutorial",
   },
