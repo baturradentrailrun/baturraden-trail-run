@@ -69,7 +69,7 @@ export const columns: ColumnDef<PesertaProps>[] = [
   },
   {
     accessorKey: "domisili",
-    header: "Domisili",
+    header: "Kota",
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("domisili") ?? "-"}</div>
     ),
