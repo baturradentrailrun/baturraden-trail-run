@@ -127,7 +127,7 @@ export function DataTable({ data }: DataTableProps) {
 
   return (
     <div className="w-full">
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         <CardPeserta
           value={table.getRowModel().rows?.length}
           title="Total Peserta"
