@@ -15,7 +15,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -42,6 +42,7 @@ import {
 } from "lucide-react";
 
 import CardPeserta from "./CardPeserta";
+import { Card, CardHeader } from "./ui/card";
 
 export const columns: ColumnDef<PesertaProps>[] = [
   {
@@ -97,6 +98,22 @@ export const columns: ColumnDef<PesertaProps>[] = [
 interface DataTableProps {
   data: PesertaProps[];
 }
+
+function getResidenceCounts(data: PesertaProps[]) {
+  const counts: Record<string, number> = {};
+  data.forEach((item) => {
+    if (item.domisili) {
+      const lowercasedDomisili = item.domisili.toLowerCase();
+      if (counts[lowercasedDomisili]) {
+        counts[lowercasedDomisili]++;
+      } else {
+        counts[lowercasedDomisili] = 1;
+      }
+    }
+  });
+  return counts;
+}
+
 export function DataTable({ data }: DataTableProps) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -124,6 +141,8 @@ export function DataTable({ data }: DataTableProps) {
       rowSelection,
     },
   });
+
+  const residenceCounts = getResidenceCounts(data);
 
   return (
     <div className="w-full">
@@ -170,6 +189,27 @@ export function DataTable({ data }: DataTableProps) {
           description="Peserta Running 7KM"
           icon={<MountainSnow size={20} />}
         />
+      </div>
+
+      <div className="my-5">
+        <div className="font-semibold mb-2">Kota :</div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {Object.entries(residenceCounts).map(([domisili, count]) => (
+            <Card key={domisili} className="p-2">
+              <div className="flex items-center justify-between capitalize font-semibold">
+                {domisili}
+                <div
+                  className={buttonVariants({
+                    variant: "outline",
+                    size: "icon",
+                  })}
+                >
+                  {count}
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
       </div>
       <div className="flex justify-between gap-2 items-center py-4">
         <Input
