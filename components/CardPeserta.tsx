@@ -14,7 +14,7 @@ const CardPeserta = ({ value, title, description, icon }: CardPesertaProps) => {
     <Card>
       <CardHeader>
         <div className="flex gap-4 justify-start items-start">
-          <Button size={"icon"} variant={"ghost"}>
+          <Button size={"icon"} variant={"outline"} className="bg-slate-200">
             {icon}
           </Button>
           <div>

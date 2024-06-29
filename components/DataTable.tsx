@@ -202,6 +202,7 @@ export function DataTable({ data }: DataTableProps) {
                   className={buttonVariants({
                     variant: "outline",
                     size: "icon",
+                    className: "bg-slate-200",
                   })}
                 >
                   {count}
