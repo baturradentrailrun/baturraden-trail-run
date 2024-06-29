@@ -13,6 +13,20 @@ export const peserta = defineType({
       type: "string",
     }),
     defineField({
+      name: "domisili",
+      title: "Domisili",
+      description: "Kosongkan jika tidak ada domisili peserta",
+      placeholder: "Domisili peserta",
+      type: "string",
+    }),
+    defineField({
+      name: "komunitas",
+      title: "Komunitas",
+      description: "Kosongkan jika tidak ada komunitas peserta",
+      placeholder: "Nama Komunitas",
+      type: "string",
+    }),
+    defineField({
       name: "event",
       title: "Event",
       type: "string",

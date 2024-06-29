@@ -33,7 +33,15 @@ import {
 } from "@/components/ui/table";
 import { PesertaProps } from "@/types";
 import { Badge } from "./ui/badge";
-import { Settings2 } from "lucide-react";
+import {
+  Mountain,
+  MountainSnow,
+  Settings2,
+  UsersRound,
+  Waypoints,
+} from "lucide-react";
+
+import CardPeserta from "./CardPeserta";
 
 export const columns: ColumnDef<PesertaProps>[] = [
   {
@@ -58,6 +66,20 @@ export const columns: ColumnDef<PesertaProps>[] = [
       );
     },
     cell: ({ row }) => <div className="capitalize">{row.getValue("name")}</div>,
+  },
+  {
+    accessorKey: "domisili",
+    header: "Domisili",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("domisili") ?? "-"}</div>
+    ),
+  },
+  {
+    accessorKey: "komunitas",
+    header: "Komunitas",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("komunitas") ?? "-"}</div>
+    ),
   },
   {
     accessorKey: "event",
@@ -105,6 +127,50 @@ export function DataTable({ data }: DataTableProps) {
 
   return (
     <div className="w-full">
+      <div className="grid grid-cols-4 gap-5">
+        <CardPeserta
+          value={table.getRowModel().rows?.length}
+          title="Total Peserta"
+          description="Semua Peserta"
+          icon={<UsersRound size={20} />}
+        />
+        {/* total virtual run */}
+        <CardPeserta
+          value={
+            table
+              .getRowModel()
+              .rows?.filter((row) => row.original.event === "virtual run")
+              .length
+          }
+          title="Virtual Run"
+          description="Peserta Virtual Run"
+          icon={<Waypoints size={20} />}
+        />
+        {/* total running 21km */}
+        <CardPeserta
+          value={
+            table
+              .getRowModel()
+              .rows?.filter((row) => row.original.event === "running 21km")
+              .length
+          }
+          title="Running 21KM"
+          description="Peserta Running 21KM"
+          icon={<Mountain size={20} />}
+        />
+        {/* total running 7km */}
+        <CardPeserta
+          value={
+            table
+              .getRowModel()
+              .rows?.filter((row) => row.original.event === "running 7km")
+              .length
+          }
+          title="Running 7KM"
+          description="Peserta Running 7KM"
+          icon={<MountainSnow size={20} />}
+        />
+      </div>
       <div className="flex justify-between gap-2 items-center py-4">
         <Input
           placeholder="Cari nama kamu..."

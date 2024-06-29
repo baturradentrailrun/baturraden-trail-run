@@ -84,7 +84,9 @@ async function getPeserta() {
     *[_type == "peserta"]{
       "id": _id,
         name,
-        event
+        event,
+        domisili,
+        komunitas
     }
     `,
   });

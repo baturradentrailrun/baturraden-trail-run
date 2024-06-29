@@ -56,4 +56,6 @@ export interface PesertaProps {
   id: string;
   name: string;
   event: string;
+  domisili: string;
+  komunitas: string;
 }
