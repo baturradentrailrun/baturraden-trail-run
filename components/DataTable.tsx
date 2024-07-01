@@ -34,6 +34,7 @@ import {
 import { PesertaProps } from "@/types";
 import { Badge } from "./ui/badge";
 import {
+  Map,
   Mountain,
   MountainSnow,
   Settings2,
@@ -43,6 +44,7 @@ import {
 
 import CardPeserta from "./CardPeserta";
 import { Card, CardHeader } from "./ui/card";
+import NumberTicker from "./ui/number-ticker";
 
 export const columns: ColumnDef<PesertaProps>[] = [
   {
@@ -187,9 +189,11 @@ export function DataTable({ data }: DataTableProps) {
         />
       </div>
 
-      <div className="my-5">
-        <div className="font-semibold mb-2">Kota :</div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-5">
+      <div className="my-5 border-t py-5">
+        <div className="font-semibold  mb-5 uppercase text-xs flex items-center gap-2">
+          <Map /> Daftar kota yang mengikuti :
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
           {Object.entries(residenceCounts).map(([domisili, count]) => (
             <Card
               key={domisili}
@@ -204,7 +208,7 @@ export function DataTable({ data }: DataTableProps) {
                     className: "bg-slate-950 text-white rounded-xl",
                   })}
                 >
-                  {count}
+                  {count ? <NumberTicker value={count} /> : 0}
                 </div>
               </div>
             </Card>
