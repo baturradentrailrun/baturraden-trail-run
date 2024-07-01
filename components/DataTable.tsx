@@ -141,6 +141,7 @@ export function DataTable({ data }: DataTableProps) {
       rowSelection,
     },
   });
+  console.log(table);
 
   const residenceCounts = getResidenceCounts(data);
 
@@ -148,18 +149,17 @@ export function DataTable({ data }: DataTableProps) {
     <div className="w-full">
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         <CardPeserta
-          value={table.getRowModel().rows?.length}
+          color="bg-gradient-to-t from-red-700 to-red-500 text-white"
+          value={data?.length}
           title="Total Peserta"
           description="Semua Peserta"
           icon={<UsersRound size={20} />}
         />
         {/* total virtual run */}
         <CardPeserta
+          color="bg-gradient-to-t from-green-700 to-green-500 text-white"
           value={
-            table
-              .getRowModel()
-              .rows?.filter((row) => row.original.event === "virtual run")
-              .length
+            data.filter((peserta) => peserta.event === "virtual run").length
           }
           title="Virtual Run"
           description="Peserta Virtual Run"
@@ -167,11 +167,9 @@ export function DataTable({ data }: DataTableProps) {
         />
         {/* total running 21km */}
         <CardPeserta
+          color="bg-gradient-to-t from-blue-700 to-blue-500 text-white"
           value={
-            table
-              .getRowModel()
-              .rows?.filter((row) => row.original.event === "running 21km")
-              .length
+            data.filter((peserta) => peserta.event === "running 21km").length
           }
           title="Running 21KM"
           description="Peserta Running 21KM"
@@ -179,11 +177,9 @@ export function DataTable({ data }: DataTableProps) {
         />
         {/* total running 7km */}
         <CardPeserta
+          color="bg-gradient-to-t from-orange-700 to-orange-500 text-white"
           value={
-            table
-              .getRowModel()
-              .rows?.filter((row) => row.original.event === "running 7km")
-              .length
+            data.filter((peserta) => peserta.event === "running 7km").length
           }
           title="Running 7KM"
           description="Peserta Running 7KM"
@@ -193,16 +189,19 @@ export function DataTable({ data }: DataTableProps) {
 
       <div className="my-5">
         <div className="font-semibold mb-2">Kota :</div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-5">
           {Object.entries(residenceCounts).map(([domisili, count]) => (
-            <Card key={domisili} className="p-2">
-              <div className="flex items-center justify-between capitalize font-semibold">
+            <Card
+              key={domisili}
+              className="p-2 bg-gradient-to-t from-slate-900 to-slate-800 rounded-xl border-0 shadow-lg text-white"
+            >
+              <div className="flex items-center justify-between capitalize text-xs font-semibold">
                 {domisili}
                 <div
                   className={buttonVariants({
-                    variant: "outline",
+                    variant: "ghost",
                     size: "icon",
-                    className: "bg-slate-200",
+                    className: "bg-slate-950 text-white rounded-xl",
                   })}
                 >
                   {count}

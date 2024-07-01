@@ -22,11 +22,11 @@ export default function PaketLayout({
 }>) {
   return (
     <main>
-      <nav className="w-full flex justify-between items-center padding-container py-2 border-b mb-5 shadow-lg">
+      <nav className="w-full flex justify-between items-center padding-container py-2 border-b  shadow-lg">
         <Logo />
         <ModeToggle />
       </nav>
-      {children}
+      <div className="bg-slate-50 dark:bg-background">{children}</div>
       <Footer id="kontak" />
     </main>
   );

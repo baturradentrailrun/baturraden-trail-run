@@ -8,18 +8,27 @@ interface CardPesertaProps {
   title: string;
   description: string;
   icon: React.ReactNode;
+  color: string;
 }
-const CardPeserta = ({ value, title, description, icon }: CardPesertaProps) => {
+const CardPeserta = ({
+  value,
+  title,
+  description,
+  icon,
+  color,
+}: CardPesertaProps) => {
   return (
-    <Card>
+    <Card className={` border-0 shadow-xl ${color}`}>
       <CardHeader>
         <div className="flex gap-4 justify-start items-start">
-          <Button size={"icon"} variant={"outline"} className="bg-slate-200">
+          <Button size={"icon"} variant={"ghost"}>
             {icon}
           </Button>
           <div>
             <CardTitle>{title}</CardTitle>
-            <CardDescription>{description}</CardDescription>
+            <CardDescription className="text-white">
+              {description}
+            </CardDescription>
             <CardTitle className="text-3xl mt-3">{value}</CardTitle>
           </div>
         </div>

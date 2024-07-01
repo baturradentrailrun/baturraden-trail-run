@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Baca dan cermati baik-baik peraturan perlombaan!",
   keywords: ["peraturan", "perlombaan", "baturraden"],
   applicationName: "Baturaden Trail Run",
-  metadataBase: new URL("https://baturradentrailrun.com"),
+  metadataBase: new URL("https://baturradentrailrun.com/peraturan-lomba"),
   openGraph: {
     title: "Peraturan Perlombaan",
     description: "Baca dan cermati baik-baik peraturan perlombaan!",
