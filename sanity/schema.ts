@@ -6,9 +6,9 @@ import {
   paket,
   faq,
   peraturan,
-  peserta,
+  filePeserta,
 } from "./schemas";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [peserta, sponsorship, roadmap, contact, paket, faq, peraturan],
+  types: [sponsorship, roadmap, contact, paket, faq, peraturan, filePeserta],
 };

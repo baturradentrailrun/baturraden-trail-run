@@ -4,6 +4,6 @@ import { contact } from "./contact";
 import { paket } from "./paket";
 import { faq } from "./faq";
 import { peraturan } from "./peraturan";
-import { peserta } from "./peserta";
 
-export { sponsorship, roadmap, contact, paket, faq, peraturan, peserta };
+import { filePeserta } from "./file-peserta";
+export { sponsorship, roadmap, contact, paket, faq, peraturan, filePeserta };

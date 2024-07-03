@@ -7,13 +7,14 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { getPeserta } from "@/sanity/fetch";
+import { getFile, getPeserta } from "@/sanity/fetch";
 import React from "react";
 
 export const revalidate = 10;
 
 const Peserta = async () => {
-  const dataPeserta = await getPeserta();
+  const dataPeserta = await getFile();
+  console.log(dataPeserta);
 
   return (
     <div>

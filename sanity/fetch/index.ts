@@ -1,6 +1,8 @@
 import { groq } from "next-sanity";
 import { client } from "../lib/client";
 import { fetchData } from "./fetchData";
+import { FilePeserta } from "@/types";
+import { parseExcel } from "./parseExcel";
 
 async function getRoadmap() {
   const data = await fetchData({
@@ -92,6 +94,25 @@ async function getPeserta() {
   });
   return data;
 }
+
+export const getFile = async (): Promise<any[]> => {
+  const fileData: FilePeserta[] = await fetchData({
+    query: `*[_type == "filePeserta"]{
+        file {
+          asset -> {
+            url
+          }
+        }
+      }`,
+  });
+
+  if (fileData.length > 0) {
+    const url = fileData[0].file.asset.url;
+    const parsedData = await parseExcel(url);
+    return parsedData;
+  }
+  return [];
+};
 export {
   getPeserta,
   getSponsorship,

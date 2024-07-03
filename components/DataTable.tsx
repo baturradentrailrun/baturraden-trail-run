@@ -143,7 +143,6 @@ export function DataTable({ data }: DataTableProps) {
       rowSelection,
     },
   });
-  console.log(table);
 
   const residenceCounts = getResidenceCounts(data);
 
@@ -161,7 +160,9 @@ export function DataTable({ data }: DataTableProps) {
         <CardPeserta
           color="bg-gradient-to-t from-green-700 to-green-500 text-white"
           value={
-            data.filter((peserta) => peserta.event === "virtual run").length
+            data.filter(
+              (peserta) => peserta.event.toLocaleLowerCase() === "virtual run"
+            ).length
           }
           title="Virtual Run"
           description="Peserta Virtual Run"
@@ -171,7 +172,9 @@ export function DataTable({ data }: DataTableProps) {
         <CardPeserta
           color="bg-gradient-to-t from-blue-700 to-blue-500 text-white"
           value={
-            data.filter((peserta) => peserta.event === "running 21km").length
+            data.filter(
+              (peserta) => peserta.event.toLocaleLowerCase() === "21k"
+            ).length
           }
           title="Running 21KM"
           description="Peserta Running 21KM"
@@ -181,7 +184,8 @@ export function DataTable({ data }: DataTableProps) {
         <CardPeserta
           color="bg-gradient-to-t from-orange-700 to-orange-500 text-white"
           value={
-            data.filter((peserta) => peserta.event === "running 7km").length
+            data.filter((peserta) => peserta.event.toLocaleLowerCase() === "7k")
+              .length
           }
           title="Running 7KM"
           description="Peserta Running 7KM"

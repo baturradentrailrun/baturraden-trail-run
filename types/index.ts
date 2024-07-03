@@ -59,3 +59,11 @@ export interface PesertaProps {
   domisili: string;
   komunitas: string;
 }
+
+export interface FilePeserta {
+  file: {
+    asset: {
+      url: string;
+    };
+  };
+}
