@@ -117,6 +117,9 @@ function getResidenceCounts(data: PesertaProps[]) {
 }
 
 export function DataTable({ data }: DataTableProps) {
+  const sortedData = React.useMemo(() => {
+    return [...data].sort((a, b) => a.name.localeCompare(b.name));
+  }, [data]);
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -126,7 +129,7 @@ export function DataTable({ data }: DataTableProps) {
   const [rowSelection, setRowSelection] = React.useState({});
 
   const table = useReactTable({
-    data,
+    data: sortedData,
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
@@ -198,25 +201,27 @@ export function DataTable({ data }: DataTableProps) {
           <Map /> Daftar kota yang mengikuti :
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
-          {Object.entries(residenceCounts).map(([domisili, count]) => (
-            <Card
-              key={domisili}
-              className="p-2 bg-gradient-to-t from-slate-900 to-slate-800 rounded-xl border-0 shadow-lg text-white"
-            >
-              <div className="flex items-center justify-between capitalize text-xs font-semibold">
-                {domisili}
-                <div
-                  className={buttonVariants({
-                    variant: "ghost",
-                    size: "icon",
-                    className: "bg-slate-950 text-white rounded-xl",
-                  })}
-                >
-                  {count ? <NumberTicker value={count} /> : 0}
+          {Object.entries(residenceCounts)
+            .sort(([a], [b]) => a.localeCompare(b))
+            .map(([domisili, count]) => (
+              <Card
+                key={domisili}
+                className="p-2 bg-gradient-to-t from-slate-900 to-slate-800 rounded-xl border-0 shadow-lg text-white"
+              >
+                <div className="flex items-center justify-between capitalize text-xs font-semibold">
+                  {domisili}
+                  <div
+                    className={buttonVariants({
+                      variant: "ghost",
+                      size: "icon",
+                      className: "bg-slate-950 text-white rounded-xl",
+                    })}
+                  >
+                    {count ? <NumberTicker value={count} /> : 0}
+                  </div>
                 </div>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            ))}
         </div>
       </div>
       <div className="flex justify-between gap-2 items-center py-4">
@@ -299,7 +304,7 @@ export function DataTable({ data }: DataTableProps) {
                   className="h-24 text-center"
                 >
                   Nama
-                  <span className="font-bold mx-2">
+                  <span className="font-bold mx-2 capitalize">
                     {String(table.getColumn("name")?.getFilterValue())}
                   </span>
                   tidak ada dalam list kami.
