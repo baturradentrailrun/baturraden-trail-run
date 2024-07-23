@@ -4,11 +4,10 @@ import {
   sponsorship,
   contact,
   paket,
-  faq,
   peraturan,
   filePeserta,
 } from "./schemas";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [sponsorship, roadmap, contact, paket, faq, peraturan, filePeserta],
+  types: [sponsorship, roadmap, contact, paket, peraturan, filePeserta],
 };

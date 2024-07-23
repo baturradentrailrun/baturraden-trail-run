@@ -54,6 +54,7 @@ export interface ImageContent {
 
 export interface PesertaProps {
   id: string;
+  bib: string;
   name: string;
   event: string;
   domisili: string;
