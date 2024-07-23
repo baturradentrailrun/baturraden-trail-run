@@ -56,13 +56,6 @@ export const columns: ColumnDef<PesertaProps>[] = [
     },
   },
   {
-    accessorKey: "bib",
-    header: "BIB",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("bib") ?? "-"}</div>
-    ),
-  },
-  {
     accessorKey: "name",
     header: ({ column }) => {
       return (
@@ -78,17 +71,6 @@ export const columns: ColumnDef<PesertaProps>[] = [
     cell: ({ row }) => <div className="capitalize">{row.getValue("name")}</div>,
   },
   {
-    accessorKey: "event",
-    header: "Event",
-    cell: ({ row }) => (
-      <div className="capitalize">
-        <Badge variant={"outline"} className="text-center">
-          {row.getValue("event")}
-        </Badge>
-      </div>
-    ),
-  },
-  {
     accessorKey: "domisili",
     header: "Kota",
     cell: ({ row }) => (
@@ -102,6 +84,24 @@ export const columns: ColumnDef<PesertaProps>[] = [
       <div className="capitalize">{row.getValue("komunitas") ?? "-"}</div>
     ),
   },
+  {
+    accessorKey: "event",
+    header: "Event",
+    cell: ({ row }) => (
+      <div className="capitalize">
+        <Badge variant={"outline"} className="text-center">
+          {row.getValue("event") ?? "-"}
+        </Badge>
+      </div>
+    ),
+  },
+  {
+    accessorKey: "bib",
+    header: "BIB",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("bib") ?? "-"}</div>
+    ),
+  },
 ];
 
 interface DataTableProps {
@@ -112,11 +112,11 @@ function getResidenceCounts(data: PesertaProps[]) {
   const counts: Record<string, number> = {};
   data.forEach((item) => {
     if (item.domisili) {
-      const cleanedDomisili = item.domisili.trim().toLowerCase();
-      if (counts[cleanedDomisili]) {
-        counts[cleanedDomisili]++;
+      const lowercasedDomisili = item.domisili.toLowerCase();
+      if (counts[lowercasedDomisili]) {
+        counts[lowercasedDomisili]++;
       } else {
-        counts[cleanedDomisili] = 1;
+        counts[lowercasedDomisili] = 1;
       }
     }
   });
@@ -158,7 +158,7 @@ export function DataTable({ data }: DataTableProps) {
 
   return (
     <div className="w-full">
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid md:grid-cols-3  gap-5">
         <CardPeserta
           color="bg-gradient-to-t from-red-700 to-red-500 text-white"
           value={data?.length}
@@ -166,26 +166,10 @@ export function DataTable({ data }: DataTableProps) {
           description="Semua Peserta"
           icon={<UsersRound size={20} />}
         />
-        {/* total virtual run */}
-        <CardPeserta
-          color="bg-gradient-to-t from-green-700 to-green-500 text-white"
-          value={
-            data.filter(
-              (peserta) => peserta.event.toLocaleLowerCase() === "virtual run"
-            ).length
-          }
-          title="Virtual Run"
-          description="Peserta Virtual Run"
-          icon={<Waypoints size={20} />}
-        />
         {/* total running 21km */}
         <CardPeserta
           color="bg-gradient-to-t from-blue-700 to-blue-500 text-white"
-          value={
-            data.filter(
-              (peserta) => peserta.event.toLocaleLowerCase() === "21k"
-            ).length
-          }
+          value={data.filter((e) => e.event === "21k").length}
           title="Running 21KM"
           description="Peserta Running 21KM"
           icon={<Mountain size={20} />}
@@ -193,10 +177,7 @@ export function DataTable({ data }: DataTableProps) {
         {/* total running 7km */}
         <CardPeserta
           color="bg-gradient-to-t from-orange-700 to-orange-500 text-white"
-          value={
-            data.filter((peserta) => peserta.event.toLocaleLowerCase() === "7k")
-              .length
-          }
+          value={data.filter((e) => e.event === "7k").length}
           title="Running 7KM"
           description="Peserta Running 7KM"
           icon={<MountainSnow size={20} />}
