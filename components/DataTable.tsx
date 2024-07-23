@@ -56,6 +56,21 @@ export const columns: ColumnDef<PesertaProps>[] = [
     },
   },
   {
+    accessorKey: "bib",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Bib
+          <CaretSortIcon className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+    cell: ({ row }) => <div className="capitalize">{row.getValue("bib")}</div>,
+  },
+  {
     accessorKey: "name",
     header: ({ column }) => {
       return (
@@ -71,20 +86,6 @@ export const columns: ColumnDef<PesertaProps>[] = [
     cell: ({ row }) => <div className="capitalize">{row.getValue("name")}</div>,
   },
   {
-    accessorKey: "domisili",
-    header: "Kota",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("domisili") ?? "-"}</div>
-    ),
-  },
-  {
-    accessorKey: "komunitas",
-    header: "Komunitas",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("komunitas") ?? "-"}</div>
-    ),
-  },
-  {
     accessorKey: "event",
     header: "Event",
     cell: ({ row }) => (
@@ -96,10 +97,17 @@ export const columns: ColumnDef<PesertaProps>[] = [
     ),
   },
   {
-    accessorKey: "bib",
-    header: "BIB",
+    accessorKey: "domisili",
+    header: "Kota",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("bib") ?? "-"}</div>
+      <div className="capitalize">{row.getValue("domisili") ?? "-"}</div>
+    ),
+  },
+  {
+    accessorKey: "komunitas",
+    header: "Komunitas",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("komunitas") ?? "-"}</div>
     ),
   },
 ];
