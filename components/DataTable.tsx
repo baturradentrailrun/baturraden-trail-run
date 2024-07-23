@@ -56,6 +56,13 @@ export const columns: ColumnDef<PesertaProps>[] = [
     },
   },
   {
+    accessorKey: "bib",
+    header: "BIB",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("bib") ?? "-"}</div>
+    ),
+  },
+  {
     accessorKey: "name",
     header: ({ column }) => {
       return (
@@ -71,6 +78,17 @@ export const columns: ColumnDef<PesertaProps>[] = [
     cell: ({ row }) => <div className="capitalize">{row.getValue("name")}</div>,
   },
   {
+    accessorKey: "event",
+    header: "Event",
+    cell: ({ row }) => (
+      <div className="capitalize">
+        <Badge variant={"outline"} className="text-center">
+          {row.getValue("event")}
+        </Badge>
+      </div>
+    ),
+  },
+  {
     accessorKey: "domisili",
     header: "Kota",
     cell: ({ row }) => (
@@ -84,17 +102,6 @@ export const columns: ColumnDef<PesertaProps>[] = [
       <div className="capitalize">{row.getValue("komunitas") ?? "-"}</div>
     ),
   },
-  {
-    accessorKey: "event",
-    header: "Event",
-    cell: ({ row }) => (
-      <div className="capitalize">
-        <Badge variant={"outline"} className="text-center">
-          {row.getValue("event")}
-        </Badge>
-      </div>
-    ),
-  },
 ];
 
 interface DataTableProps {
@@ -105,11 +112,11 @@ function getResidenceCounts(data: PesertaProps[]) {
   const counts: Record<string, number> = {};
   data.forEach((item) => {
     if (item.domisili) {
-      const lowercasedDomisili = item.domisili.toLowerCase();
-      if (counts[lowercasedDomisili]) {
-        counts[lowercasedDomisili]++;
+      const cleanedDomisili = item.domisili.trim().toLowerCase();
+      if (counts[cleanedDomisili]) {
+        counts[cleanedDomisili]++;
       } else {
-        counts[lowercasedDomisili] = 1;
+        counts[cleanedDomisili] = 1;
       }
     }
   });
