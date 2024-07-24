@@ -125,7 +125,7 @@ function getResidenceCounts(data: PesertaProps[]) {
 
 export function DataTable({ data }: DataTableProps) {
   const sortedData = React.useMemo(() => {
-    return [...data].sort((a, b) => a.name.localeCompare(b.name));
+    return [...data].sort((a, b) => a.bib.localeCompare(b.bib));
   }, [data]);
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
