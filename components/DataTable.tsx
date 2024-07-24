@@ -48,14 +48,6 @@ import NumberTicker from "./ui/number-ticker";
 
 export const columns: ColumnDef<PesertaProps>[] = [
   {
-    id: "rowNumber",
-    enableHiding: false,
-    header: "#",
-    cell: ({ row }) => {
-      return <div>{row.index + 1}</div>;
-    },
-  },
-  {
     accessorKey: "bib",
     header: ({ column }) => {
       return (
