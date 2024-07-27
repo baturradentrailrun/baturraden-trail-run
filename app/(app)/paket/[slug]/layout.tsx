@@ -1,6 +1,8 @@
+import { poppins } from "@/app/fonts";
 import Logo from "@/components/Logo";
 import { ModeToggle } from "@/components/ModeToggle";
 import Footer from "@/components/sections/Footer";
+import { cn } from "@/lib/utils";
 import { getPaketBySlug } from "@/sanity/fetch";
 import type { Metadata, ResolvingMetadata } from "next";
 
@@ -38,7 +40,12 @@ export default function PaketLayout({
 }>) {
   return (
     <main>
-      <nav className="w-full flex justify-between items-center padding-container py-2 border-b mb-5 shadow-lg">
+      <nav
+        className={cn(
+          poppins.className,
+          "w-full flex justify-between items-center padding-container py-2 border-b mb-5 shadow-lg"
+        )}
+      >
         <Logo />
         <ModeToggle />
       </nav>

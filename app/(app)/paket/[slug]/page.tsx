@@ -80,7 +80,7 @@ export default async function PaketPage({ params }: PaketPageProps) {
           <div>
             {blockContent?.length && (
               <CustomPortableText
-                className="w-full max-w-2xl text-slate-900 dark:text-white"
+                className="w-full max-w-2xl text-slate-900 dark:text-white leading-relaxed"
                 value={blockContent as PortableTextBlock[]}
               />
             )}
