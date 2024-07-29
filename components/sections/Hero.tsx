@@ -7,8 +7,11 @@ import { SiAppstore } from "react-icons/si";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { Badge } from "../ui/badge";
 import { MapPinned } from "lucide-react";
+import { getGpx } from "@/sanity/fetch";
 
-const Hero = ({ id }: { id: string }) => {
+const Hero = async ({ id }: { id: string }) => {
+  const gpx = await getGpx();
+  console.log(gpx);
   return (
     <header
       id={id}
@@ -65,14 +68,19 @@ const Hero = ({ id }: { id: string }) => {
                   AppStore
                 </CustomButton>
               </div>
-              <CustomButton
-                className="rounded-full w-full md:w-fit mx-auto mt-5 flex gap-4 items-center"
-                _blank
-                href="#"
-              >
-                <MapPinned size={20} />
-                Download GPX
-              </CustomButton>
+              <div className="flex gap-2 flex-col md:flex-row  text-white mt-5 justify-center">
+                {gpx.map((g, index) => (
+                  <div key={index}>
+                    <CustomButton
+                      className="rounded-full flex gap-4 items-center"
+                      href={`${g.url}?dl=`}
+                    >
+                      <MapPinned size={20} />
+                      Download GPX {g.category}
+                    </CustomButton>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -113,6 +113,17 @@ export const getFile = async (): Promise<any[]> => {
   }
   return [];
 };
+
+export const getGpx = async (): Promise<any[]> => {
+  const fileData: FilePeserta[] = await fetchData({
+    query: `*[_type == "fileUpload"]{
+      "url": file.asset->url,
+      category
+    }`,
+  });
+
+  return fileData;
+};
 export {
   getPeserta,
   getSponsorship,
