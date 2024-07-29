@@ -68,18 +68,12 @@ const CardPaket: React.FC<CardPaketProps> = ({
           />
         </div>
         <p className="text-black font-bold text-lg mb-3">{formattedPrice}</p>
-        {slug?.current === "virtual-run" ? (
-          <Button variant={"outline"} className="w-full" disabled>
-            Event Berakhir
-          </Button>
-        ) : (
-          <Link
-            href={`/paket/${slug}`}
-            className={cn(buttonVariants({ variant: "outline" }), "w-full")}
-          >
-            More Detail
-          </Link>
-        )}
+        <Link
+          href={`/paket/${slug?.current}`}
+          className={cn(buttonVariants({ variant: "outline" }), "w-full")}
+        >
+          More Detail
+        </Link>
       </div>
     </div>
   );

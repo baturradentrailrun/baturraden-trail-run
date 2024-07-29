@@ -6,6 +6,7 @@ import CustomButton from "../CustomButton";
 import { SiAppstore } from "react-icons/si";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { Badge } from "../ui/badge";
+import { MapPinned } from "lucide-react";
 
 const Hero = ({ id }: { id: string }) => {
   return (
@@ -64,6 +65,14 @@ const Hero = ({ id }: { id: string }) => {
                   AppStore
                 </CustomButton>
               </div>
+              <CustomButton
+                className="rounded-full w-full md:w-fit mx-auto mt-5 flex gap-4 items-center"
+                _blank
+                href="#"
+              >
+                <MapPinned size={20} />
+                Download GPX
+              </CustomButton>
             </div>
           </div>
         </div>
