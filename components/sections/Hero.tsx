@@ -68,7 +68,7 @@ const Hero = async ({ id }: { id: string }) => {
                   AppStore
                 </CustomButton>
               </div>
-              <div className="flex gap-2 flex-col md:flex-row  text-white mt-5 justify-center">
+              {/* <div className="flex gap-2 flex-col md:flex-row  text-white mt-5 justify-center">
                 {gpx.map((g, index) => (
                   <div key={index}>
                     <CustomButton
@@ -80,7 +80,7 @@ const Hero = async ({ id }: { id: string }) => {
                     </CustomButton>
                   </div>
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
