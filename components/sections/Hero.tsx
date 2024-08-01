@@ -93,7 +93,7 @@ const Hero = async ({ id }: { id: string }) => {
                       <DropdownMenuSeparator />
                       {gpx.map((g, index) => (
                         <Link key={index} href={`${g.url}?dl=`}>
-                          <DropdownMenuItem className="flex gap-3 items-center">
+                          <DropdownMenuItem className="flex gap-3 items-center hover:dark:bg-green-500  cursor-pointer  hover:bg-green-500 active:dark:bg-green-500 active:bg-green-500">
                             <FileDown size={20} /> File GPX {g.category}
                           </DropdownMenuItem>
                         </Link>
