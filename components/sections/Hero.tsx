@@ -19,7 +19,7 @@ import {
 import Link from "next/link";
 import { Button } from "../ui/button";
 
-export const revalidate = 100;
+export const revalidate = 10;
 const Hero = async ({ id }: { id: string }) => {
   const gpx = await getGpx();
   console.log(gpx);
@@ -80,7 +80,7 @@ const Hero = async ({ id }: { id: string }) => {
                 </CustomButton>
               </div>
               <div className="my-10 flex justify-center">
-                {gpx && (
+                {gpx ? (
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button className="flex items-center gap-4 rounded-full justify-center">
@@ -101,6 +101,8 @@ const Hero = async ({ id }: { id: string }) => {
                       ))}
                     </DropdownMenuContent>
                   </DropdownMenu>
+                ) : (
+                  ""
                 )}
               </div>
             </div>
