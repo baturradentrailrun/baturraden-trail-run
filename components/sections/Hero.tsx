@@ -6,8 +6,18 @@ import CustomButton from "../CustomButton";
 import { SiAppstore } from "react-icons/si";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
 import { Badge } from "../ui/badge";
-import { MapPinned } from "lucide-react";
+import { FileDown, MapPinned } from "lucide-react";
 import { getGpx } from "@/sanity/fetch";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
+import Link from "next/link";
+import { Button } from "../ui/button";
 
 const Hero = async ({ id }: { id: string }) => {
   const gpx = await getGpx();
@@ -68,19 +78,30 @@ const Hero = async ({ id }: { id: string }) => {
                   AppStore
                 </CustomButton>
               </div>
-              {/* <div className="flex gap-2 flex-col md:flex-row  text-white mt-5 justify-center">
-                {gpx.map((g, index) => (
-                  <div key={index}>
-                    <CustomButton
-                      className="rounded-full flex gap-4 items-center"
-                      href={`${g.url}?dl=`}
-                    >
-                      <MapPinned size={20} />
-                      Download GPX {g.category}
-                    </CustomButton>
-                  </div>
-                ))}
-              </div> */}
+              <div className="my-10 flex justify-center">
+                {gpx && (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button className="flex items-center gap-4 rounded-full justify-center">
+                        <MapPinned size={20} /> Download File GPX
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuLabel className="text-center">
+                        Download File GPX
+                      </DropdownMenuLabel>
+                      <DropdownMenuSeparator />
+                      {gpx.map((g, index) => (
+                        <Link key={index} href={`${g.url}?dl=`}>
+                          <DropdownMenuItem className="flex gap-3 items-center">
+                            <FileDown size={20} /> File GPX {g.category}
+                          </DropdownMenuItem>
+                        </Link>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                )}
+              </div>
             </div>
           </div>
         </div>
