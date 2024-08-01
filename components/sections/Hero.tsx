@@ -19,6 +19,7 @@ import {
 import Link from "next/link";
 import { Button } from "../ui/button";
 
+export const revalidate = 100;
 const Hero = async ({ id }: { id: string }) => {
   const gpx = await getGpx();
   console.log(gpx);
