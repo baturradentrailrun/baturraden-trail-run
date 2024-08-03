@@ -1,10 +1,18 @@
 import { groq } from "next-sanity";
 import { client } from "../lib/client";
 
-export async function fetchData({ query, slug }: { query: string; slug?: string }) {
+export async function fetchData({
+  query,
+  slug,
+}: {
+  query: string;
+  slug?: string;
+}) {
   try {
     const params = slug ? { slug } : {};
-    const data = await client.fetch(groq`${query}`, params);
+    const data = await client.fetch(groq`${query}`, params, {
+      next: { revalidate: 1 },
+    });
     return data;
   } catch (error: any) {
     console.error("Error fetching data:", error);
