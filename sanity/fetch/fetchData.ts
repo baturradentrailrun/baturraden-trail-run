@@ -12,6 +12,7 @@ export async function fetchData({
     const params = slug ? { slug } : {};
     const data = await client.fetch(groq`${query}`, params, {
       next: { revalidate: 1 },
+      cache: "no-store",
     });
     return data;
   } catch (error: any) {
