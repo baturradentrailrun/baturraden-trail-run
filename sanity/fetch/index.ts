@@ -121,10 +121,8 @@ export const getGpx = async (): Promise<any[]> => {
       category
     }`,
   });
-  if (fileData.length > 0) {
-    return fileData;
-  }
-  return [];
+
+  return fileData;
 };
 export {
   getPeserta,
