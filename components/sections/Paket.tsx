@@ -7,7 +7,6 @@ import { LucideDownloadCloud } from "lucide-react";
 interface PaketProps {
   id: string;
 }
-export const revalidate = 100;
 const Paket: React.FC<PaketProps> = async ({ id }) => {
   const paket = await getPaket();
 

@@ -24,7 +24,6 @@ interface PaketPageProps {
     slug: string;
   };
 }
-export const revalidate = 100;
 export default async function PaketPage({ params }: PaketPageProps) {
   const { slug } = params;
   const paket = await getPaketBySlug(slug);

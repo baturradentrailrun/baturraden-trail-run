@@ -10,8 +10,6 @@ import {
 import { getFile, getPeserta } from "@/sanity/fetch";
 import React from "react";
 
-export const revalidate = 10;
-
 const Peserta = async () => {
   const dataPeserta = await getFile();
   console.log(dataPeserta);

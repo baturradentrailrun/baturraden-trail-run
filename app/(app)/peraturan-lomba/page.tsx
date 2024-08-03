@@ -12,7 +12,6 @@ import { PortableTextBlock } from "next-sanity";
 
 import React from "react";
 
-export const revalidate = 100;
 const PeraturanLomba = async () => {
   const data = await getPeraturan();
 

@@ -2,7 +2,6 @@ import CarouselLogo from "../CarouselLogo";
 import { getSponsorship } from "@/sanity/fetch";
 import { CarouselImageProps } from "@/types";
 
-export const revalidate = 100;
 const Support = async () => {
   const sponsorship: CarouselImageProps[] = await getSponsorship();
 
