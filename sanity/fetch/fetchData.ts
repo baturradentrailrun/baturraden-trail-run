@@ -11,8 +11,7 @@ export async function fetchData({
   try {
     const params = slug ? { slug } : {};
     const data = await client.fetch(groq`${query}`, params, {
-      next: { revalidate: 1 },
-      cache: "no-store",
+      next: { revalidate: 5 },
     });
     return data;
   } catch (error: any) {
